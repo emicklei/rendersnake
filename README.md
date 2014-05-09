@@ -4,7 +4,7 @@ rendersnake
 RenderSnake is a Java library for creating components and pages that produce HTML using only Java. Its purpose is to support the creation of Web applications that are better maintainable, allows for easier reuse, have testable UI components and produces compact HTML in an efficient way.
 
 Hello example
-```
+```java
 HtmlCanvas html = new HtmlCanvas();
 html
   .html()
@@ -17,7 +17,7 @@ System.out.println(html.toHtml());
 
 
 Example of a complex Form element to pick one of four options
-```
+```java
 html.div(dataRole("fieldcontain"))
     .fieldset(dataRole("controlgroup").dataType("horizontal"))
         .legend().content("Method")
@@ -38,7 +38,7 @@ html.div(dataRole("fieldcontain"))
 
 
 Example of a HTML5 page wrapper and JQuery Mobile
-```
+```java
 public class MobileSiteLayoutWrapper extends RenderableWrapper {
 
     public MobileSiteLayoutWrapper(Renderable component) {
@@ -75,7 +75,7 @@ public class MobileSiteLayoutWrapper extends RenderableWrapper {
 ```
 
 Example of a login component
-```
+```java
 public class LoginPageContent implements Renderable {
 
     @Override
