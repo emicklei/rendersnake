@@ -1,7 +1,7 @@
 rendersnake
 ===========
 
-Java library for creating components and pages that produce HTML using only Java
+RenderSnake is a Java library for creating components and pages that produce HTML using only Java. Its purpose is to support the creation of Web applications that are better maintainable, allows for easier reuse, have testable UI components and produces compact HTML in an efficient way.
 
 Hello example
 ```
