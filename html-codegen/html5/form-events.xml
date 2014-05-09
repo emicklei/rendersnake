@@ -1,0 +1,64 @@
+
+<tbody><tr>
+<th width="160" align="left">Attribute</th>
+<th width="40" align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+<tr>
+<td>onblur</td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when an element loses focus</td>
+</tr>
+<tr>
+<td>onchange</td>
+<td><i>script</i></td>
+<td>Script to be run when an element changes</td>
+</tr>
+<tr>
+<td>oncontextmenu<span class="new">New</span></td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when a context menu is triggered</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when an element gets focus</td>
+</tr>
+<tr>
+<td>onformchange<span class="new">New</span></td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when a form changes</td>
+</tr>
+<tr>
+<td>onforminput<span class="new">New</span></td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when a form gets user input</td>
+</tr>
+<tr>
+<td>oninput<span class="new">New</span></td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when an element gets user input</td>
+</tr>
+<tr>
+<td>oninvalid<span class="new">New</span></td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when an element is invalid</td>
+</tr>
+<tr class="notsupported">
+<td>onreset</td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when a form is reset<br><span class="deprecated">Not supported in HTML5</span></td>
+</tr>
+<tr>
+<td>onselect</td>
+<td><i>script&nbsp;</i></td>
+<td>Script to be run when an element is selected
+</td>
+</tr>
+<tr>
+<td>onsubmit</td>
+<td><i>script</i></td>
+<td>Script to be run when a form is submitted
+</td>
+</tr>
+</tbody>

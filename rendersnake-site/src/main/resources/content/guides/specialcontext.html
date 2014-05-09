@@ -1,0 +1,38 @@
+<p>
+Each HtmlCanvas instance has its own PageContext instance that is a container of key->value attributes.
+Upon its creation, the PageContext will be initialized with request related values which are stored in special variables.
+These values are accessible using the helper class RequestUtils.
+</p>
+
+<h3>Request Parameters</h3>
+<pre class="brush: java">
+ContextMap&lt;?&gt; parameterMap = RequestUtils.getParameters(html);
+String parameter = RequestUtils.getParameter(html,"username");
+</pre>
+
+<h3>Session Attributes</h3>
+<pre class="brush: java">
+ContextMap&lt;?&gt; sessionMap = RequestUtils.getSession(html);
+</pre>
+
+<h3>Headers</h3>
+<pre class="brush: java">
+ContextMap&lt;?&gt; headerMap = RequestUtils.getHeaders(html);
+String header = RequestUtils.getHeadersValue(html,"Host");
+</pre>
+
+<h3>Cookies</h3>
+<pre class="brush: java">
+ContextMap&lt;?&gt; cookieMap = RequestUtils.getCookies(html);
+</pre>
+
+<p>
+Another way to access all the details of the HttpServletRequest or HttpServletResponse is to use the ServletUtils class.
+This obviously only works if you are using Jsp, Spring MVC or Guice in a J2E Servlet container (Tomcat,JBoss,Jetty,...).
+</p>
+
+<pre class="brush: java">
+HttpServletRequest request = ServletUtils.requestFor(html);
+HttpServletResponse response = ServletUtils.responseFor(html);
+HttpSession session = ServletUtils.sessionFor(html);
+</pre>

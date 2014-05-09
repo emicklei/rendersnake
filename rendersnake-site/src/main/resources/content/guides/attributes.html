@@ -1,0 +1,43 @@
+<a name="attributes"></a>
+<h2>How to write attributes</h2>
+
+<p>
+HtmlAttributes provides the interface to write the HTML attributes for elements.
+Its interface consists of methods that allow you define the attributes. 
+For example, to write a div with an id and class you write:
+</p>
+
+<pre class="brush: java">
+html.div(id("me").class_("hidden")).content("Invisible text");
+
+&lt;div id="me" class="hidden"&gt;Invisible text&lt;/a&gt;
+</pre>
+
+<p>
+In order to make the attribute methods visible to your component class, you must include a static import:
+</p>
+<pre class="brush: java">
+import static org.rendersnake.HtmlAttributesFactory.*
+</pre>
+
+<p>
+Each method will return the HtmlAttributes object. 
+This allows for a fluent programming style (also known as the Builder coding pattern).
+Note that the HtmlAttributes object does not check for duplicate attributes.
+If the attribute name is acutally a Java reserved word, its corresponding method will have the underscore "_" suffix.
+</p>
+
+<p>
+The library also includes the JQueryAttributesFactory and JQueryAttributes classes.
+These classes has methods for common JQuery(Mobile) attributes.
+</p>
+<pre class="brush: java">
+import static org.rendersnake.ext.jquery.JQueryAttributesFactory.*
+</pre>
+
+<p>
+If you cannot find the method in either class HtmlAttributes or JQueryAttributes then you can use the generic method.
+</p>
+<pre class="brush: java">
+new HtmlAttributes("key","value").add("another-key","another-value");
+</pre>

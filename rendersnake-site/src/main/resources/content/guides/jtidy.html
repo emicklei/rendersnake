@@ -1,0 +1,45 @@
+<a name="jtidy"></a>
+<h2>Validate a Page using jTidy</h2>
+
+<p>
+Tidy is an external library that can parse HTML content and perform full validation.
+You can use Tidy to validate Page components.
+RenderSnake does not provide any additional tooling to support this.
+For more information how to use jTidy goto <a href="http://jtidy.sourceforge.net/">jTidy</a>.
+</p>
+
+<pre class="brush: java">
+public void testPageRender() throws IOException {
+    HtmlCanvas html = new HtmlCanvas();
+    html.render(new PersonalPage());
+    
+    Tidy tidy = new Tidy();
+    tidy.setMessageListener(new TidyMessageCheck());
+    tidy.setXHTML(true); 
+    tidy.setDocType("loose");
+    tidy.parse(new ByteArrayInputStream(html.toHtml().getBytes()), System.out);        
+}
+</pre>
+
+<p>
+On default, the TidyMessageCheck will throw an Assertion failed if it encounters an error.
+By setting its field <strong>collectMessages</strong> to true, 
+your test can collect all errors and warnings to inspect later in the testcase.
+</p>
+
+<p>
+Use the following Maven dependency it you want Tidy to validate your components.
+</p>
+
+<pre class="brush: java">
+&lt;!-- for HTML validation -->
+&lt;dependency>
+	&lt;groupId>net.sf.jtidy&lt;/groupId>
+	&lt;artifactId>jtidy&lt;/artifactId>
+	&lt;version>r938&lt;/version>
+	&lt;scope>test&lt;/scope>
+&lt;/dependency>
+</pre>
+
+<p>
+Source for the class TidyMessageCheck can be downloaded <a href="http://code.google.com/p/rendersnake/source/browse/trunk/rendersnake/src/test/java/org/rendersnake/ext/tidy/TidyMessageCheck.java">here</a>.

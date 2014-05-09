@@ -1,0 +1,20 @@
+<a name="jsp"></a>
+<h2>How to use renderSnake from JSP</h2>
+
+<p>
+You can combine JSP technology and renderSnake to implement the MVC pattern.
+In this approach the JSP (servlet) will act as the controller to which a request is dispatched.
+The contents of a JSP file will be a scriplet where you can fetch domain data to prepare the rendering.
+Next, you create a new HtmlCanvas to render your component(s) using the domain data.
+</p>
+
+<pre class="brush: java">
+&lt;%@page import="org.rendersnake.ext.servlet.HtmlServletCanvas"%>
+&lt;%@page import="com.company.html.AccountListPage"%>
+
+&lt;% 
+// fetch accounts
+...
+new HtmlServletCanvas(request,response,out).render(new AccountListPage(accounts));
+%>
+</pre>

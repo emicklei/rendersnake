@@ -1,0 +1,9 @@
+    public void test_%1$s() throws Exception {
+        assertEquals("<%1$s/>", html.%1$s(null).toHtml());
+    }
+    public void test_%1$s_null() throws Exception {
+        assertEquals("<%1$s/>", html.%1$s(null).toHtml());
+    }
+    public void test_%1$s_attrs() throws Exception {
+        assertEquals("<%1$s/>", html.%1$s(new Attributes()).toHtml());
+    }

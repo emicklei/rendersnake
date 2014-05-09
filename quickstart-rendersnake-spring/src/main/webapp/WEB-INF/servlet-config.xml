@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:util="http://www.springframework.org/schema/util">
+
+	<!-- The configuration for your 'app' Dispatcher Servlet. This example uses 
+		component scanning to automatically pick up controllers. - Dependencies of 
+		controllers are wired using @Autowired support. - The URI scheme is controller 
+		using @RequestMapping annotations -->
+
+	<context:component-scan base-package="com.company.ui" />
+	<context:component-scan base-package="com.company.service" />
+
+	<mvc:resources mapping="/static/**" location="/static/" />
+
+	<!-- This argument resolver exists for renderSnake HtmlCanvas parameter processing -->
+	<bean
+		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+		<property name="customArgumentResolver">
+			<bean class="org.rendersnake.ext.spring.HtmlCanvasArgumentResolver">
+	        </bean>
+		</property>
+	</bean>
+
+
+	<mvc:annotation-driven />
+	
+	<!-- This resolver exists for renderSnake Page rendering -->
+	<bean class="org.rendersnake.ext.spring.RenderableViewResolver" />
+	
+</beans>

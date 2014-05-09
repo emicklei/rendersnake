@@ -1,0 +1,102 @@
+
+<tbody><tr>
+<th valign="top" width="160" align="left">Attribute</th>
+<th valign="top" width="40" align="left">Value</th>
+<th valign="top" align="left">Description</th>
+</tr>
+<tr>
+<td valign="top">onafterprint<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run after the document is printed</td>
+</tr>
+<tr>
+<td valign="top">onbeforeprint<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run before the document is printed</td>
+</tr>
+<tr>
+<td valign="top">onbeforeonload<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run before the document loads</td>
+</tr>
+<tr>
+<td valign="top">onblur</td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the window loses focus</td>
+</tr>
+<tr>
+<td valign="top">onerror<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when an error occur</td>
+</tr>
+<tr>
+<td valign="top">onfocus</td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the window gets focus</td>
+</tr>
+<tr>
+<td valign="top">onhaschange<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the document has change</td>
+</tr>
+<tr>
+<td valign="top">onload</td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the document loads</td>
+</tr>
+<tr>
+<td valign="top">onmessage<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the message is triggered</td>
+</tr>
+<tr>
+<td valign="top">onoffline<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the document goes offline</td>
+</tr>
+<tr>
+<td valign="top">ononline<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the document comes online</td>
+</tr>
+<tr>
+<td valign="top">onpagehide<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the window is hidden</td>
+</tr>
+<tr>
+<td valign="top">onpageshow<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the window becomes visible </td>
+</tr>
+<tr>
+<td valign="top">onpopstate<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the window's history changes</td>
+</tr>
+<tr>
+<td valign="top">onredo<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the document performs a redo</td>
+</tr>
+<tr>
+<td valign="top">onresize<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the window is resized</td>
+</tr>
+<tr>
+<td valign="top">onstorage<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when a document loads</td>
+</tr>
+<tr>
+<td valign="top">onundo<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when a document performs an undo</td>
+</tr>
+<tr>
+<td valign="top">onunload<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the user leaves the document</td>
+</tr>
+</tbody>

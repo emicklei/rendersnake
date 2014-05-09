@@ -1,0 +1,97 @@
+
+<tbody><tr>
+<th valign="top" width="160" align="left">Attribute</th>
+<th valign="top" width="40" align="left">Value</th>
+<th valign="top" align="left">Description</th>
+</tr>
+<tr>
+<td valign="top">onclick</td>
+<td valign="top"><i>script</i>&nbsp;</td>
+<td valign="top">Script to be run on a mouse click</td>
+</tr>
+<tr>
+<td valign="top">ondblclick</td>
+<td valign="top"><i>script</i>&nbsp;</td>
+<td valign="top">Script to be run on a mouse double-click
+</td>
+</tr>
+<tr>
+<td valign="top">ondrag<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when an element is dragged</td>
+</tr>
+<tr>
+<td valign="top">ondragend<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run at the end of a drag operation</td>
+</tr>
+<tr>
+<td valign="top">ondragenter<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when an element has been dragged to a valid 
+drop target</td>
+</tr>
+<tr>
+<td valign="top">ondragleave<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when an element leaves a valid drop target</td>
+</tr>
+<tr>
+<td valign="top">ondragover<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when an element is being dragged over a 
+valid drop target</td>
+</tr>
+<tr>
+<td valign="top">ondragstart<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run at the start of a drag operation</td>
+</tr>
+<tr>
+<td valign="top">ondrop<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when dragged element is being dropped</td>
+</tr>
+<tr>
+<td valign="top">onmousedown</td>
+<td valign="top"><i>script</i>&nbsp;</td>
+<td valign="top">Script to be run when a mouse button is pressed
+</td>
+</tr>
+<tr>
+<td valign="top">onmousemove</td>
+<td valign="top"><i>script</i>&nbsp;</td>
+<td valign="top">Script to be run when the mouse pointer moves
+</td>
+</tr>
+<tr>
+<td valign="top">onmouseout</td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the mouse pointer moves out of an
+      element
+</td>
+</tr>
+<tr>
+<td valign="top">onmouseover</td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the mouse pointer moves over an
+      element
+</td>
+</tr>
+<tr>
+<td valign="top">onmouseup</td>
+<td valign="top"><i>script</i>&nbsp;</td>
+<td valign="top">Script to be run when a mouse button is released
+</td>
+</tr>
+<tr>
+<td valign="top">onmousewheel<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when the mouse wheel is being rotated</td>
+</tr>
+<tr>
+<td valign="top">onscroll<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when an element's scrollbar is being scrolled</td>
+</tr>
+</tbody>

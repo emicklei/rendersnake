@@ -1,0 +1,14 @@
+<pre class="brush: java">
+public class Footer implements Renderable {
+
+    public void renderOn(HtmlCanvas html) throws IOException {
+        html
+            .div(id("footer"))
+                .write("Copyright &copy; renderSnake.org |",false)
+                .a(href("http://www.html5webtemplates.co.uk"))
+                     .content("design from HTML5webtemplates.co.uk")
+            ._div()
+            .render(new GoogleAnalyticsTracker());
+    }
+}
+</pre>

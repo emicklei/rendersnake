@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- http://www.jroller.com/mrdon/entry/find_of_the_day_wagon -->
+	<parent>
+		<groupId>org.rendersnake</groupId>
+		<artifactId>rendersnake-parent</artifactId>
+		<version>1.7.3</version>		
+	</parent>
+	<artifactId>rendersnake</artifactId>
+	<packaging>bundle</packaging>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<version>2.3.6</version>
+				<extensions>true</extensions>
+				<configuration>
+					<instructions>
+						<Import-Package>
+							*,
+							com.google.inject;resolution:=optional,
+							javax.inject;resolution:=optional,
+							javax.servlet;resolution:=optional,
+							javax.servlet.http;resolution:=optional,
+							org.springframework.beans;resolution:=optional,
+							org.springframework.context;resolution:=optional,
+							org.springframework.core;resolution:=optional,
+							org.springframework.web.bind.support;resolution:=optional,
+							org.springframework.web.context.request;resolution:=optional,
+							org.springframework.web.servlet;resolution:=optional
+						</Import-Package>
+						<Export-Package>
+							org.rendersnake,
+							org.rendersnake.*
+						</Export-Package>
+					</instructions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
+	<dependencies>
+		<!-- For compile -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.inject</groupId>
+			<artifactId>javax.inject</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- For test only -->
+		<dependency>
+			<groupId>net.sf.jtidy</groupId>
+			<artifactId>jtidy</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	
+</project>

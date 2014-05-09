@@ -1,0 +1,47 @@
+    /**
+     * %3$s.
+     *
+     * Opens the <em>%1$s</em> tag, without any attributes.
+     *
+     * <p>Close this tag by calling {@link #_%2$s()} (the end tag is required).
+     *
+     * @return the receiver, this <code>HtmlCanvas</code> instance.
+     * @throws IOException in case of an I/O error.
+     * @since HTML5
+     */
+    public HtmlCanvas %2$s() throws IOException {
+        out.write("<%1$s>");
+        stack.push("</%1$s>");
+        return this;
+    }
+
+    /**
+     * %3$s.
+     *
+     * Opens the <em>%1$s</em> tag, with the specified attributes.
+     *
+     * <p>Close this tag by calling {@link #_%2$s()} (the end tag is required).
+     *
+     * @param attrs the {@link ToAttributesString}, or <code>null</code> if none.
+     * @return the receiver, this <code>HtmlCanvas</code> instance.
+     * @throws IOException in case of an I/O error.
+     * @since HTML5
+     */
+    public HtmlCanvas %2$s(ToAttributesString attrs) throws IOException {
+        out.write("<%1$s");
+        if (attrs != null)
+            out.write(attrs.toAttributesString());
+        out.write('>');
+        stack.push("</%1$s>");
+        return this;
+    }
+    
+    /**
+     * Closes the <em>%1$s</em> tag.
+     *
+     * @throws IOException in case of an I/O error while writing the end tag.
+     * @since HTML5     
+     */
+    public HtmlCanvas _%2$s() throws IOException {
+        return this.close("</%1$s>");
+    }    

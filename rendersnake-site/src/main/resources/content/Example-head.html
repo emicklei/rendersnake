@@ -1,0 +1,17 @@
+<pre class="brush: java">
+public class Head implements Renderable {
+
+    public void renderOn(HtmlCanvas html) throws IOException {
+        
+        html
+            .head()
+                .title().content(canvas.getPageContext().getString("title"))
+                .meta(name("description").add("content","renderSnake documentation and examples",false))
+                .macros().stylesheet("htdocs/style-01.css"))
+                .render(JQueryLibrary.core("1.4.3"))
+                .render(JQueryLibrary.ui("1.8.6"))
+                .render(JQueryLibrary.baseTheme("1.8"))
+            ._head();            
+    }
+}
+</pre>

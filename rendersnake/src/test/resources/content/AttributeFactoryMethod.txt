@@ -1,0 +1,15 @@
+    /**
+     * Return a new HtmlAttributes with the <em>%1$s</em> attribute and the given String parameter as its value.
+     *
+     * <p>%3$s</p>
+     *
+     * <p>The value of %1$s will be XML escaped. 
+     * Use new HtmlAttributes().add("%1$s",<i>value</i>,false) if the value does not have characters that need escaping.</p>
+     *      
+     * @param %1$s the String | null.
+     * @return the receiver, this <code>HtmlAttributes</code> instance.
+     * %5$s     
+     */
+    public static HtmlAttributes %2$s(String %4$s) throws IOException {
+        return new HtmlAttributes().%6$s("%1$s", %4$s, ESCAPE_CHARS);
+    }

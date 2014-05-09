@@ -1,0 +1,38 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+	<!-- Beans in these files will makeup the configuration of the root web application context -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/application-config.xml</param-value>
+	</context-param>
+
+	<!-- Bootstraps the root web application context before servlet initialization -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- Deploys the 'app' dispatcher servlet whose configuration resides in /WEB-INF/servlet-config.xml -->
+	<servlet>
+		<servlet-name>app</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/servlet-config.xml</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>app</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+  
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+    </welcome-file-list>  
+      
+</web-app>

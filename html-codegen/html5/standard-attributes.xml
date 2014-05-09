@@ -1,0 +1,81 @@
+<tbody>
+<tr>
+<td>accesskey</td>
+<td><i>character</i></td>
+<td>Specifies a keyboard shortcut to access an element</td>
+</tr>
+<tr>
+<td>class</td>
+<td><i>classname</i></td>
+<td>Specifies a classname for an element (used to specify a class 
+in a style sheet)</td>
+</tr>
+<tr>
+<td>contenteditable,New</td>
+<td>true<br/>
+false</td>
+<td>Specifies if the user is allowed to edit the content or not</td>
+</tr>
+<tr>
+<td>contextmenu,New</td>
+<td><i>menu_id</i></td>
+<td>Specifies the context menu for an element</td>
+</tr>
+<tr>
+<td>dir</td>
+<td>ltr<br/>rtl</td>
+<td>Specifies the text direction for the content in an element</td>
+</tr>
+<tr>
+<td>draggable,New</td>
+<td>true<br/>false<br/>auto</td>
+<td>Specifies whether or not a user is allowed to drag an element</td>
+</tr>
+<tr>
+<td>dropzone,New</td>
+<td>copy<br/>
+move<br/>
+link</td>
+<td>Specifies what happens when dragged items/data is dropped in 
+the element</td>
+</tr>
+<tr>
+<td>hidden,New</td>
+<td>hidden</td>
+<td>Specifies that the element is not relevant. Hidden elements are 
+not displayed</td>
+</tr>
+<tr>
+<td>id</td>
+<td><i>id</i></td>
+<td>Specifies a unique id for an element</td>
+</tr>
+<tr>
+<td>lang</td>
+<td><i>language_code</i></td>
+<td>Specifies a language code for the content in an element.
+<a href="../tags/ref_language_codes.asp">Language code reference</a></td>
+</tr>
+<tr>
+<td>spellcheck,New</td>
+<td>true<br/>
+false</td>
+<td>Specifies if the element must have its spelling and grammar 
+checked</td>
+</tr>
+<tr>
+<td>style</td>
+<td><i>style_definition</i></td>
+<td>Specifies an inline style for an element</td>
+</tr>
+<tr>
+    <td>tabindex</td>
+    <td><i>number</i></td>
+    <td>Specifies the tab order of an element</td>
+  </tr>
+<tr>
+<td>title</td>
+<td><i>text</i></td>
+<td>Specifies extra information about an element</td>
+</tr>
+</tbody>

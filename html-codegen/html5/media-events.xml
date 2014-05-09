@@ -1,0 +1,133 @@
+
+<tbody><tr>
+<th valign="top" width="160" align="left">Attribute</th>
+<th valign="top" width="40" align="left">Value</th>
+<th valign="top" align="left">Description</th>
+</tr>
+<tr>
+<td valign="top">onabort</td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run on an abort event</td>
+</tr>
+<tr>
+<td valign="top">oncanplay<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when media can start play, but might has to 
+stop for buffering</td>
+</tr>
+<tr>
+<td valign="top">oncanplaythrough<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when media can be played to the end, without 
+stopping for buffering</td>
+</tr>
+<tr>
+<td valign="top">ondurationchange<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when the length of the media is changed</td>
+</tr>
+<tr>
+<td valign="top">onemptied<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when a media resource element suddenly becomes 
+empty (network errors, errors on load etc.)</td>
+</tr>
+<tr>
+<td valign="top">onended<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when media has reach the end</td>
+</tr>
+<tr>
+<td valign="top">onerror<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when an error occurs during the loading of an 
+element</td>
+</tr>
+<tr>
+<td valign="top">onloadeddata<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when media data is loaded</td>
+</tr>
+<tr>
+<td valign="top">onloadedmetadata<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the duration and other media data of a 
+media element is loaded</td>
+</tr>
+<tr>
+<td valign="top">onloadstart<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the browser starts to load the media data</td>
+</tr>
+<tr>
+<td valign="top">onpause<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when media data is paused</td>
+</tr>
+<tr>
+<td valign="top">onplay<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when media data is going to start playing</td>
+</tr>
+<tr>
+<td valign="top">onplaying<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when media data has start playing</td>
+</tr>
+<tr>
+<td valign="top">onprogress<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when the browser is fetching the media data</td>
+</tr>
+<tr>
+<td valign="top">onratechange<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when the media data's playing rate has changed</td>
+</tr>
+<tr>
+<td valign="top">onreadystatechange<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when the ready-state changes</td>
+</tr>
+<tr>
+<td valign="top">onseeked<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when a media element's seeking attribute is no 
+longer true, and the seeking has ended</td>
+</tr>
+<tr>
+<td valign="top">onseeking<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when a media element's seeking attribute is 
+true, and the seeking has begun</td>
+</tr>
+<tr>
+<td valign="top">onstalled<span class="new">New</span></td>
+<td valign="top"><i>script&nbsp;</i></td>
+<td valign="top">Script to be run when there is an error in fetching media data 
+(stalled)</td>
+</tr>
+<tr>
+<td valign="top">onsuspend<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when the browser has been fetching media data, 
+but stopped before the entire media file was fetched</td>
+</tr>
+<tr>
+<td valign="top">ontimeupdate<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when media changes its playing position</td>
+</tr>
+<tr>
+<td valign="top">onvolumechange<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when media changes the volume, also when 
+volume is set to "mute"</td>
+</tr>
+<tr>
+<td valign="top">onwaiting<span class="new">New</span></td>
+<td valign="top"><i>script</i></td>
+<td valign="top">Script to be run when media has stopped playing, but is 
+expected to resume</td>
+</tr>
+</tbody>

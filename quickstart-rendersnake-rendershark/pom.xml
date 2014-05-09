@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.company</groupId>
+	<artifactId>quickstart-rendersnake-rendershark</artifactId>
+	<version>1.6</version>
+	<packaging>jar</packaging>
+	<name>quickstart-rendersnake-rendershark Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>				
+		
+		<!-- renderSnake -->
+		<dependency>
+			<groupId>org.rendersnake</groupId>
+			<artifactId>rendersnake</artifactId>
+			<version>1.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<!-- end renderSnake -->
+
+  		<dependency>
+  			<groupId>org.rendershark</groupId>
+  			<artifactId>rendershark</artifactId>
+  			<version>0.5</version>
+	      <exclusions>
+	        <exclusion>
+	          <groupId>org.rendersnake</groupId>
+	          <artifactId>rendersnake</artifactId>
+	        </exclusion>
+	      </exclusions>  			
+  		</dependency>
+
+	</dependencies>
+	
+	<repositories>
+        <repository>
+            <id>rendersnake-repo</id>
+            <name>Repository for rendersnake</name>
+            <url>http://rendersnake.googlecode.com/svn/repo</url>
+        </repository>
+        <repository>
+            <id>rendershark-repo</id>
+            <name>Repository for rendershark</name>
+            <url>http://rendershark.googlecode.com/svn/repo</url>
+        </repository>	
+	</repositories>	
+	
+	<build>
+		<finalName>quickstart-rendersnake-renderhark</finalName>
+	</build>
+</project>

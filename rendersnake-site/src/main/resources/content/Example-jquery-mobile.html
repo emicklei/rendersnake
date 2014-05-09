@@ -1,0 +1,25 @@
+<pre class="brush: java">
+html
+    .render(DocType.HTML5)
+    .html()
+        .head()
+            .title().content("renderSnake - Mobile")
+            .render(JQueryLibrary.mobileTheme("1.0a3"))
+            .render(JQueryLibrary.core("1.4.4"))
+            .render(JQueryLibrary.mobile("1.0a3"))
+        ._head()
+    .body()
+        .div(dataRole("page"))
+            .div(dataRole("header").dataTheme("b"))
+                .render(new PageHeader())
+                ._div()
+            .div(dataRole("content").dataTheme("b"))
+                .render(new HomePageContent())
+                ._div()
+            .div(dataRole("footer").dataTheme("b"))
+                .render(new PageFooter())
+                ._div()
+        ._div()
+    ._body()
+    ._html();
+</pre>

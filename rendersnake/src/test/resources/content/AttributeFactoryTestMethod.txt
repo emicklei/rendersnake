@@ -1,0 +1,4 @@
+    public void test_%2$s(){
+        assertEquals(" %1$s=\"%1$s\"", HtmlAttributesFactory.%2$s("%1$s").toAttributesString());
+    }
+

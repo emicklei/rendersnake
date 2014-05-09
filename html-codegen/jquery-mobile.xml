@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<jquery-mobile>
+  <attr name="data-theme"/>
+  <attr name="data-position"/>
+  <attr name="data-nobackbtn" selector="dataNoBackButton" type="boolean"/>
+  <attr name="data-role" />
+  <attr name="data-role" value="page"/>
+  <attr name="data-role" value="header"/>
+  <attr name="data-role" value="content"/>
+  <attr name="data-role" value="footer"/>
+  <attr name="data-role" value="fieldcontain"/>
+  <attr name="data-role" value="controlgroup"/>
+  <attr name="data-rel" enum="dialog"/>
+  <attr name="data-transition" enum="pop"/>
+
+  
+</jquery-mobile>

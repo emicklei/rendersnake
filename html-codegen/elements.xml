@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<elements>
+  <element name="Element">
+  <attr name="class" />
+  <attr name="id" />
+  <attr name="style" />
+  <attr name="title" />
+  <attr name="dir" />
+  <attr name="lang" />
+  <attr name="xml:lang" />
+  <attr name="accesskey" />
+  <attr name="tabindex" />
+  </element>
+  
+  <element name="Meta">
+  <attr name="content" />
+  <attr name="http-equiv" />
+  <attr name="name" />
+  <attr name="scheme" />
+  </element>  
+  
+  <element name="Link">
+  <attr name="charset" />
+  <attr name="href" />
+  <attr name="hreflang" />
+  <attr name="media" />
+  <attr name="rel" />
+  <attr name="rev" />
+  <attr name="target" />
+  <attr name="type" />
+  </element>
+</elements>

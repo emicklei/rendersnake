@@ -1,0 +1,22 @@
+<a name="renderable"></a>
+<h2>How to create components</h2>
+
+<p>
+To create a component class for HTML rendering, it must implement the Renderable interface.
+This requires you to implement the <strong>renderOn</strong> method that has a HtmlCanvas as its argument.
+You can use the template below to create your component classes.
+
+<pre class="brush: java">
+import java.io.IOException;
+import org.rendersnake.HtmlCanvas;
+import org.rendersnake.Renderable;
+import static org.rendersnake.HtmlAttributesFactory.*;
+
+public class MyComponent implements Renderable {
+
+    public void renderOn(HtmlCanvas html) throws IOException {
+    
+    	html.h1().content("My Component");    
+    }
+}
+</pre>

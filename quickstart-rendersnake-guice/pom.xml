@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.company</groupId>
+	<artifactId>quickstart-rendersnake-guice</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>quickstart-rendersnake-guice Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.2</version>
+			<scope>test</scope>
+		</dependency>
+		
+  		<dependency>
+  			<groupId>javax.servlet</groupId>
+  			<artifactId>servlet-api</artifactId>
+  			<version>2.4</version>
+  			<scope>provided</scope>
+  		</dependency>				
+		
+		<!-- renderSnake -->
+		<dependency>
+			<groupId>org.rendersnake</groupId>
+			<artifactId>rendersnake</artifactId>
+			<version>1.7.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+		<!-- end renderSnake -->
+
+  		<!-- Guice -->
+  		<dependency>
+  			<groupId>com.google.inject</groupId>
+  			<artifactId>guice</artifactId>
+  			<version>3.0</version>
+  		</dependency>
+
+  		<dependency>
+  			<groupId>javax.inject</groupId>
+  			<artifactId>javax.inject</artifactId>
+  			<version>1</version>		
+  		</dependency>
+		<!-- end Guice -->
+
+		<!-- Guice Servlet integration -->
+		<dependency>
+			<groupId>com.google.inject.extensions</groupId>
+			<artifactId>guice-servlet</artifactId>
+			<version>3.0</version>
+		</dependency>
+		<!-- end Guice Servlet Integration -->
+
+	</dependencies>
+	
+	<repositories>
+        <repository>
+            <id>rendersnake-repo</id>
+            <name>Repository for rendersnake</name>
+            <url>http://rendersnake.googlecode.com/svn/repo</url>
+        </repository>	
+	</repositories>	
+	
+	<build>
+		<finalName>quickstart-rendersnake-guice</finalName>
+		<plugins>
+			<plugin>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<wtpversion>1.5</wtpversion>
+				</configuration>
+			</plugin>
+      <plugin>
+              <groupId>org.mortbay.jetty</groupId>
+              <artifactId>maven-jetty-plugin</artifactId>
+              <version>6.1.10</version>
+      </plugin>			
+		</plugins>
+	</build>
+</project>

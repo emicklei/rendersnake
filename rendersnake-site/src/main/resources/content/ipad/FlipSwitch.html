@@ -1,0 +1,21 @@
+<pre class="brush: java">
+FlipSwitch f = new FlipSwitch("switch-select", "bluetoothEnabled");
+f.textLabel = "Bluetooth";
+f.id("switch");            
+canvas.render(f);
+</pre>    
+
+<p>which is a component for the following snippet:</p>
+
+<pre class="brush: java">
+html
+    .div(dataRole("fieldcontain"))
+	    .label(for_(selectId))
+	        .content(textLabel)
+	    .select(dataRole("slider").name(name).id(selectId))
+	        .option(value("off")).content(textOff))
+	        .option(value("on")).content(textOn)
+	    ._select()
+    ._div();
+</pre>    
+            

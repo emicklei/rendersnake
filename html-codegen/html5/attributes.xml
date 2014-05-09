@@ -1,0 +1,450 @@
+<all>
+<tr>
+<td>onblur</td>
+<td>script</td>
+<td>Script to be run when an element loses focus</td>
+</tr>
+<tr>
+<td>onchange</td>
+<td>script</td>
+<td>Script to be run when an element changes</td>
+</tr>
+<tr>
+<td>oncontextmenu,New</td>
+<td>script</td>
+<td>Script to be run when a context menu is triggered</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>script</td>
+<td>Script to be run when an element gets focus</td>
+</tr>
+<tr>
+<td>onformchange,New</td>
+<td>script</td>
+<td>Script to be run when a form changes</td>
+</tr>
+<tr>
+<td>onforminput,New</td>
+<td>script</td>
+<td>Script to be run when a form gets user input</td>
+</tr>
+<tr>
+<td>oninput,New</td>
+<td>script</td>
+<td>Script to be run when an element gets user input</td>
+</tr>
+<tr>
+<td>oninvalid,New</td>
+<td>script</td>
+<td>Script to be run when an element is invalid</td>
+</tr>
+<tr class="notsupported">
+<td>onreset</td>
+<td>script</td>
+<td>Script to be run when a form is reset:Not supported in HTML5</td>
+</tr>
+<tr>
+<td>onselect</td>
+<td>script</td>
+<td>Script to be run when an element is selected
+</td>
+</tr>
+<tr>
+<td>onsubmit</td>
+<td>script</td>
+<td>Script to be run when a form is submitted
+</td>
+</tr>
+<tr>
+<td valign="top">onabort</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run on an abort event</td>
+</tr>
+<tr>
+<td valign="top">oncanplay,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media can start play, but might has to 
+stop for buffering</td>
+</tr>
+<tr>
+<td valign="top">oncanplaythrough,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media can be played to the end, without 
+stopping for buffering</td>
+</tr>
+<tr>
+<td valign="top">ondurationchange,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the length of the media is changed</td>
+</tr>
+<tr>
+<td valign="top">onemptied,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when a media resource element suddenly becomes 
+empty (network errors, errors on load etc.)</td>
+</tr>
+<tr>
+<td valign="top">onended,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media has reach the end</td>
+</tr>
+<tr>
+<td valign="top">onerror</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when an error occurs during the loading of an 
+element</td>
+</tr>
+<tr>
+<td valign="top">onloadeddata,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media data is loaded</td>
+</tr>
+<tr>
+<td valign="top">onloadedmetadata,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the duration and other media data of a 
+media element is loaded</td>
+</tr>
+<tr>
+<td valign="top">onloadstart,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the browser starts to load the media data</td>
+</tr>
+<tr>
+<td valign="top">onpause,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media data is paused</td>
+</tr>
+<tr>
+<td valign="top">onplay,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media data is going to start playing</td>
+</tr>
+<tr>
+<td valign="top">onplaying,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media data has start playing</td>
+</tr>
+<tr>
+<td valign="top">onprogress,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the browser is fetching the media data</td>
+</tr>
+<tr>
+<td valign="top">onratechange,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the media data's playing rate has changed</td>
+</tr>
+<tr>
+<td valign="top">onreadystatechange,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the ready-state changes</td>
+</tr>
+<tr>
+<td valign="top">onseeked,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when a media element's seeking attribute is no 
+longer true, and the seeking has ended</td>
+</tr>
+<tr>
+<td valign="top">onseeking,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when a media element's seeking attribute is 
+true, and the seeking has begun</td>
+</tr>
+<tr>
+<td valign="top">onstalled,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when there is an error in fetching media data 
+(stalled)</td>
+</tr>
+<tr>
+<td valign="top">onsuspend,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the browser has been fetching media data, 
+but stopped before the entire media file was fetched</td>
+</tr>
+<tr>
+<td valign="top">ontimeupdate,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media changes its playing position</td>
+</tr>
+<tr>
+<td valign="top">onvolumechange,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media changes the volume, also when 
+volume is set to "mute"</td>
+</tr>
+<tr>
+<td valign="top">onwaiting,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when media has stopped playing, but is 
+expected to resume</td>
+</tr>
+<tr>
+<td valign="top">onclick</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run on a mouse click</td>
+</tr>
+<tr>
+<td valign="top">ondblclick</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run on a mouse double-click
+</td>
+</tr>
+<tr>
+<td valign="top">ondrag,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when an element is dragged</td>
+</tr>
+<tr>
+<td valign="top">ondragend,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run at the end of a drag operation</td>
+</tr>
+<tr>
+<td valign="top">ondragenter,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when an element has been dragged to a valid 
+drop target</td>
+</tr>
+<tr>
+<td valign="top">ondragleave,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when an element leaves a valid drop target</td>
+</tr>
+<tr>
+<td valign="top">ondragover,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when an element is being dragged over a 
+valid drop target</td>
+</tr>
+<tr>
+<td valign="top">ondragstart,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run at the start of a drag operation</td>
+</tr>
+<tr>
+<td valign="top">ondrop,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when dragged element is being dropped</td>
+</tr>
+<tr>
+<td valign="top">onmousedown</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when a mouse button is pressed
+</td>
+</tr>
+<tr>
+<td valign="top">onmousemove</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the mouse pointer moves
+</td>
+</tr>
+<tr>
+<td valign="top">onmouseout</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the mouse pointer moves out of an
+      element
+</td>
+</tr>
+<tr>
+<td valign="top">onmouseover</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the mouse pointer moves over an
+      element
+</td>
+</tr>
+<tr>
+<td valign="top">onmouseup</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when a mouse button is released
+</td>
+</tr>
+<tr>
+<td valign="top">onmousewheel,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the mouse wheel is being rotated</td>
+</tr>
+<tr>
+<td valign="top">onscroll,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when an element's scrollbar is being scrolled</td>
+</tr>
+
+<tr>
+<td>accesskey</td>
+<td>character</td>
+<td>Specifies a keyboard shortcut to access an element</td>
+</tr>
+<tr>
+<td>class</td>
+<td>classname</td>
+<td>Specifies a classname for an element (used to specify a class 
+in a style sheet)</td>
+</tr>
+<tr>
+<td>contenteditable,New</td>
+<td>true
+false</td>
+<td>Specifies if the user is allowed to edit the content or not</td>
+</tr>
+<tr>
+<td>contextmenu,New</td>
+<td>menu_id</td>
+<td>Specifies the context menu for an element</td>
+</tr>
+<tr>
+<td>dir</td>
+<td>ltrrtl</td>
+<td>Specifies the text direction for the content in an element</td>
+</tr>
+<tr>
+<td>draggable,New</td>
+<td>truefalseauto</td>
+<td>Specifies whether or not a user is allowed to drag an element</td>
+</tr>
+<tr>
+<td>dropzone,New</td>
+<td>copy
+move
+link</td>
+<td>Specifies what happens when dragged items/data is dropped in 
+the element</td>
+</tr>
+<tr>
+<td>hidden,New</td>
+<td>hidden</td>
+<td>Specifies that the element is not relevant. Hidden elements are 
+not displayed</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id</td>
+<td>Specifies a unique id for an element</td>
+</tr>
+<tr>
+<td>lang</td>
+<td>language_code</td>
+<td>Specifies a language code for the content in an element.
+<a href="../tags/ref_language_codes.asp">Language code reference</a></td>
+</tr>
+<tr>
+<td>spellcheck,New</td>
+<td>true
+false</td>
+<td>Specifies if the element must have its spelling and grammar 
+checked</td>
+</tr>
+<tr>
+<td>style</td>
+<td>style_definition</td>
+<td>Specifies an inline style for an element</td>
+</tr>
+<tr>
+    <td>tabindex</td>
+    <td>number</td>
+    <td>Specifies the tab order of an element</td>
+  </tr>
+<tr>
+<td>title</td>
+<td>text</td>
+<td>Specifies extra information about an element</td>
+</tr>
+<tr>
+<td valign="top">onafterprint,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run after the document is printed</td>
+</tr>
+<tr>
+<td valign="top">onbeforeprint,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run before the document is printed</td>
+</tr>
+<tr>
+<td valign="top">onbeforeonload,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run before the document loads</td>
+</tr>
+<tr>
+<td valign="top">onblur</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the window loses focus</td>
+</tr>
+<tr>
+<td valign="top">onerror,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when an error occur</td>
+</tr>
+<tr>
+<td valign="top">onfocus</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the window gets focus</td>
+</tr>
+<tr>
+<td valign="top">onhaschange,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the document has change</td>
+</tr>
+<tr>
+<td valign="top">onload</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the document loads</td>
+</tr>
+<tr>
+<td valign="top">onmessage,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the message is triggered</td>
+</tr>
+<tr>
+<td valign="top">onoffline,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the document goes offline</td>
+</tr>
+<tr>
+<td valign="top">ononline,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the document comes online</td>
+</tr>
+<tr>
+<td valign="top">onpagehide,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the window is hidden</td>
+</tr>
+<tr>
+<td valign="top">onpageshow,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the window becomes visible </td>
+</tr>
+<tr>
+<td valign="top">onpopstate,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the window's history changes</td>
+</tr>
+<tr>
+<td valign="top">onredo,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the document performs a redo</td>
+</tr>
+<tr>
+<td valign="top">onresize,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the window is resized</td>
+</tr>
+<tr>
+<td valign="top">onstorage,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when a document loads</td>
+</tr>
+<tr>
+<td valign="top">onundo,New</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when a document performs an undo</td>
+</tr>
+<tr>
+<td valign="top">onunload</td>
+<td valign="top">script</td>
+<td valign="top">Script to be run when the user leaves the document</td>
+</tr>
+</all>

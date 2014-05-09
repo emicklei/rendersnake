@@ -1,0 +1,14 @@
+<h1>Encapsulate a Javascript library</h1>
+
+<pre class="brush: java">
+public class SyntaxHighlighterLibary implements Renderable {
+
+    public void renderOn(HtmlCanvas html) throws IOException {
+        html.macros().javascript("/js/shCore.js"));
+        html.macros().javascript("/js/shBrushJScript.js"));
+        html.macros().stylesheet("/js/shBrushJava.js"));
+        html.macros().stylesheet("/shCore.css"));
+        html.macros().stylesheet("/shThemeDefault.css"));
+    }
+}
+</pre>

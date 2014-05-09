@@ -1,0 +1,22 @@
+<a name="stringresource"></a>
+<h2>How to include static content</h2>
+
+<p>
+Sometimes, it is more convenient to store and maintain larger fixed texts in separate files. 
+To include its contents in e.g. a paragraph, you can use the StringResource component. 
+On default, the text content is cached in memory (static field of the class). 
+</p>
+
+Either use it directly:
+<pre class="brush: java">
+html.write(StringResource.get("/content/cms.html"),NO_ESCAPE);
+html.write(StringResource.get("/js/myfunctions.js"),NO_ESCAPE);
+</pre>
+
+or use as a Renderable component: 
+<pre class="brush: java">
+html.render(new StringResource("/content/cms.html",NO_ESCAPE));
+html.render(new StringResource("/content/plain.txt",NO_ESCAPE));
+</pre>
+NO_ESCAPE is a boolean constant of HtmlCanvas with value "false".<p/>
+The contents from the file (such as cms.html from the example) is cached by the StringResource class and is typically stored in /src/main/resources 

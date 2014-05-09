@@ -1,0 +1,4 @@
+    public void test_%2$s() throws IOException {
+        assertEquals(" %1$s=\"%1$s\"", new HtmlAttributes().%2$s("%1$s").toHtml());
+    }
+

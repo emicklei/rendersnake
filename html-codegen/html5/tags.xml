@@ -1,0 +1,114 @@
+<tbody>
+<tr>
+<td>article</td>
+<td>Defines an article</td>
+</tr>
+<tr>
+<td>aside</td>
+<td>Defines content aside from the page content</td>
+</tr>
+<tr>
+<td>audio</td>
+<td>Defines sound content</td>
+</tr>
+<tr>
+<td>canvas</td>
+<td>Defines graphics</td>
+</tr>
+<tr>
+<td>command</td>
+<td>Defines a command button</td>
+</tr>
+<tr>
+<td>datalist</td>
+<td>Defines a dropdown list</td>
+</tr>
+<tr>
+<td>details</td>
+<td>Defines details of an element</td>
+</tr>
+<tr>
+<td>embed</td>
+<td>Defines external interactive content or plugin</td>
+</tr>
+<tr>
+<td>figcaption</td>
+<td>Defines the caption of a figure element</td>
+</tr>
+<tr>
+<td>figure</td>
+<td>Defines a group of media content, and their caption</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>Defines a footer for a section or page</td>
+</tr>
+<tr>
+<td>header</td>
+<td>Defines a header for a section or page</td>
+</tr>
+<tr>
+<td>hgroup</td>
+<td>Defines information about a section in a document</td>
+</tr>
+<tr>
+<td>keygen</td>
+<td>Defines a generated key in a form</td>
+</tr>
+<tr>
+<td>mark</td>
+<td>Defines marked text</td>
+</tr>
+<tr>
+<td>meter</td>
+<td>Defines measurement within a predefined range</td>
+</tr>
+<tr>
+<td>nav</td>
+<td>Defines navigation links</td>
+</tr>
+<tr>
+<td>output</td>
+<td>Defines some types of output</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>Defines progress of a task of any kind</td>
+</tr>
+<tr>
+<td>rp</td>
+<td>Used in ruby annotations to define what to show browsers that to not support the ruby element.</td>
+</tr>
+<tr>
+<td>rt</td>
+<td>Defines explanation to ruby annotations.</td>
+</tr>
+<tr>
+<td>ruby</td>
+<td>Defines ruby annotations</td>
+</tr>
+<tr>
+<td>section</td>
+<td>Defines a section</td>
+</tr>
+<tr>
+<td>source</td>
+<td>Defines media resources</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>Defines the header of a "detail" element</td>
+</tr>
+<tr>
+<td>time</td>
+<td>Defines a date/time</td>
+</tr>
+<tr>
+<td>video</td>
+<td>Defines a video</td>
+</tr>
+<tr>
+<td>wbr</td>
+<td>Defines a possible line-break</td>
+</tr>
+</tbody>

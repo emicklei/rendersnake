@@ -1,0 +1,18 @@
+<p>
+Place static content in resource files which can be loaded and cached by StringResource.
+In the example below, the famous Google tracker script is loaded and written on the canvas.
+The NO_ESCAPE (false) parameter says that the content will not be HTML-escaped.
+A StringResource can be used for any content, HTML, Javascript, CSS or plain text.
+</p>
+
+<pre class="brush: java">
+public class GoogleAnalyticsTracker implements Renderable {
+
+    public void renderOn(HtmlCanvas html) throws IOException {
+        String host = RequestUtils.getHeaderValue(html, "HOST");
+        if(host.startsWith("localhost"))
+            return;
+        html.write(StringResource.get("content/googletracker.js"),NO_ESCAPE);      
+    }
+}
+</pre>
