@@ -35,6 +35,22 @@ public abstract class HtmlAttributesFactory {
     public static HtmlAttributes add(String key,String value,boolean escapeNeeded) {
         return new HtmlAttributes().add(key,value,escapeNeeded);
     }
+    public static HtmlAttributes selectedIf(boolean condition) {
+        return new HtmlAttributes().selectedIf(condition);
+    }   
+    public static HtmlAttributes checkedIf(boolean condition) {
+        return new HtmlAttributes().checkedIf(condition);
+    } 
+    public static HtmlAttributes disabledIf(boolean condition) {
+        return new HtmlAttributes().disabledIf(condition);
+    }    
+    public static HtmlAttributes autofocusIf(boolean condition) {
+        return new HtmlAttributes().autofocusIf(condition);
+    }
+    public static HtmlAttributes requiredIf(boolean condition) {
+        return new HtmlAttributes().requiredIf(condition);
+    }    
+    
     ///////////////////////////////////////////////////////////////////////////////////
     //
     //  Methods below are generated using the AttributesMethodsGenerator. DO NOT EDIT
