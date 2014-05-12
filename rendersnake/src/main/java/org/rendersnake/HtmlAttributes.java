@@ -996,6 +996,30 @@ public class HtmlAttributes implements CharactersWriteable {
         return this.add("checked", checked, ESCAPE_CHARS);
     }
     /**
+     * Append the <em>required</em> attribute with the given String parameter as its value.
+     *
+     * <p>for input elements</p>
+     *
+     * @param required the String | null.
+     * @return the receiver, this <code>HtmlAttributes</code> instance.
+     * @since HTML5    
+     */
+    public HtmlAttributes required(String required) {
+        return this.add("required", required, ESCAPE_CHARS);
+    }    
+    /**
+     * Append the <em>autofocus</em> attribute with the given String parameter as its value.
+     *
+     * <p>for input elements</p>
+     *
+     * @param autofocus the String | null.
+     * @return the receiver, this <code>HtmlAttributes</code> instance.
+     * @since HTML5    
+     */
+    public HtmlAttributes autofocus(String autofocus) {
+        return this.add("autofocus", autofocus, ESCAPE_CHARS);
+    }        
+    /**
      * Append the <em>readonly</em> attribute with the given String parameter as its value.
      *
      * <p>for text and passwd</p>
@@ -2875,5 +2899,25 @@ checked</p>
     }  
     public HtmlAttributes dataAjax(boolean enabled) {
         return this.add("data-ajax", Boolean.toString(enabled), false);
-    }        
+    }     
+    
+    public HtmlAttributes selectedIf(boolean condition) {
+        return condition ? selected("selected") : this;
+    }
+    
+    public HtmlAttributes checkedIf(boolean condition) {
+        return condition ? checked("checked") : this;
+    }  
+    
+    public HtmlAttributes disabledIf(boolean condition) {
+        return condition ? disabled("disabled") : this;
+    }
+    
+    public HtmlAttributes autofocusIf(boolean condition) {
+        return condition ? autofocus("autofocus") : this;
+    } 
+    
+    public HtmlAttributes requiredIf(boolean condition) {
+        return condition ? required("required") : this;
+    }    
 }

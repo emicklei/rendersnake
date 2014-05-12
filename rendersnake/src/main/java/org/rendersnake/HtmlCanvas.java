@@ -7143,5 +7143,33 @@ public class HtmlCanvas {
      */
     public HtmlCanvas _wbr() throws IOException {
         return this.close("</wbr>");
-    }        
+    }  
+    
+    /**
+     * Convenience method that write the integer value (if not null).
+     * @param i
+     * @return
+     * @throws IOException
+     */     
+    public HtmlCanvas write(Integer i) throws IOException {
+        if (null == i) {
+            return this;
+        }
+        out.append(Integer.toString(i));
+        return this;
+    }
+    
+    /**
+     * Convenience method that calls write(Integer) and closes the last opened tag.
+     * @param i
+     * @return
+     * @throws IOException
+     */     
+    public HtmlCanvas content(Integer i) throws IOException {
+        if (null == i) {
+            return this.close();
+        }
+        out.append(Integer.toString(i));
+        return this.close(); 
+    }    
 }
