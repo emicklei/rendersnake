@@ -35,20 +35,45 @@ public abstract class HtmlAttributesFactory {
     public static HtmlAttributes add(String key,String value,boolean escapeNeeded) {
         return new HtmlAttributes().add(key,value,escapeNeeded);
     }
-    public static HtmlAttributes selectedIf(boolean condition) {
-        return new HtmlAttributes().selectedIf(condition);
-    }   
-    public static HtmlAttributes checkedIf(boolean condition) {
-        return new HtmlAttributes().checkedIf(condition);
-    } 
-    public static HtmlAttributes disabledIf(boolean condition) {
-        return new HtmlAttributes().disabledIf(condition);
-    }    
-    public static HtmlAttributes autofocusIf(boolean condition) {
-        return new HtmlAttributes().autofocusIf(condition);
+    /**
+     * If condition is true then add the attribute selected with value "selected".
+     * @param condition
+     * @return
+     */        
+    public static HtmlAttributes selected_if(boolean condition) {
+        return new HtmlAttributes().selected_if(condition);
     }
-    public static HtmlAttributes requiredIf(boolean condition) {
-        return new HtmlAttributes().requiredIf(condition);
+    /**
+     * If condition is true then add the attribute checked with value "checked".
+     * @param condition
+     * @return
+     */        
+    public static HtmlAttributes checked__if(boolean condition) {
+        return new HtmlAttributes().checked_if(condition);
+    }
+    /**
+     * If condition is true then add the attribute disabled with value "disabled".
+     * @param condition
+     * @return
+     */        
+    public static HtmlAttributes disabled_if(boolean condition) {
+        return new HtmlAttributes().disabled_if(condition);
+    }
+    /**
+     * If condition is true then add the attribute autofocus with value "autofocus".
+     * @param condition
+     * @return
+     */        
+    public static HtmlAttributes autofocus_if(boolean condition) {
+        return new HtmlAttributes().autofocus_if(condition);
+    }
+    /**
+     * If condition is true then add the attribute required with value "required".
+     * @param condition
+     * @return
+     */    
+    public static HtmlAttributes required_if(boolean condition) {
+        return new HtmlAttributes().required_if(condition);
     }    
     
     ///////////////////////////////////////////////////////////////////////////////////

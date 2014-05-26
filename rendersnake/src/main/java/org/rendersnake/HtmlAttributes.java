@@ -2900,24 +2900,44 @@ checked</p>
     public HtmlAttributes dataAjax(boolean enabled) {
         return this.add("data-ajax", Boolean.toString(enabled), false);
     }     
-    
-    public HtmlAttributes selectedIf(boolean condition) {
+    /**
+     * If condition is true then add the attribute selected with value "selected".
+     * @param condition
+     * @return
+     */
+    public HtmlAttributes selected_if(boolean condition) {
         return condition ? selected("selected") : this;
     }
-    
-    public HtmlAttributes checkedIf(boolean condition) {
+    /**
+     * If condition is true then add the attribute checked with value "checked".
+     * @param condition
+     * @return
+     */
+    public HtmlAttributes checked_if(boolean condition) {
         return condition ? checked("checked") : this;
     }  
-    
-    public HtmlAttributes disabledIf(boolean condition) {
+    /**
+     * If condition is true then add the attribute disabled with value "disabled".
+     * @param condition
+     * @return
+     */
+    public HtmlAttributes disabled_if(boolean condition) {
         return condition ? disabled("disabled") : this;
     }
-    
-    public HtmlAttributes autofocusIf(boolean condition) {
+    /**
+     * If condition is true then add the attribute autofocus with value "autofocus".
+     * @param condition
+     * @return
+     */
+    public HtmlAttributes autofocus_if(boolean condition) {
         return condition ? autofocus("autofocus") : this;
     } 
-    
-    public HtmlAttributes requiredIf(boolean condition) {
+    /**
+     * If condition is true then add the attribute required with value "required".
+     * @param condition
+     * @return
+     */
+    public HtmlAttributes required_if(boolean condition) {
         return condition ? required("required") : this;
     }    
 }
