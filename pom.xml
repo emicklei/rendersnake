@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
+  <parent>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
+  </parent>
+
   	<modelVersion>4.0.0</modelVersion>
 
   	<groupId>org.rendersnake</groupId>
@@ -26,7 +32,8 @@
   		</license>
   	</licenses>
   	<scm>
-  		<url>scm:svn:http://rendersnake.googlecode.com/svn/trunk</url>
+  		<url>https://github.com/emicklei/rendersnake.git</url>
+      <connection>https://github.com/emicklei/rendersnake.git</connection>
   	</scm>
 
   	<properties>
@@ -54,8 +61,8 @@
   	</developers>
 
   	<issueManagement>
-  		<system>Google</system>
-  		<url>http://code.google.com/p/rendersnake/</url>
+  		<system>github</system>
+  		<url>https://github.com/emicklei/rendersnake</url>
   	</issueManagement>
 
 	<dependencyManagement>
@@ -115,23 +122,7 @@
 		</dependencies>
 	</dependencyManagement>
 	
-    <distributionManagement>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>googlecode</id>
-            <url>svn:https://rendersnake.googlecode.com/svn/repo</url>
-        </repository>
-    </distributionManagement>
-
   	<build>
-      <extensions>
-          <extension>
-              <groupId>org.jvnet.wagon-svn</groupId>
-              <artifactId>wagon-svn</artifactId>
-              <version>1.8</version>
-          </extension>
-      </extensions>
-        	  
   		<plugins>
   			<plugin>
   				<groupId>org.apache.maven.plugins</groupId>
