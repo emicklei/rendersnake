@@ -33,6 +33,7 @@
   	</licenses>
   	<scm>
   		<url>https://github.com/emicklei/rendersnake.git</url>
+      <developerConnection>scm:git:git@github.com:emicklei/rendersnake.git</developerConnection>
       <connection>https://github.com/emicklei/rendersnake.git</connection>
   	</scm>
 
