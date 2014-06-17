@@ -124,6 +124,7 @@
 	
   	<build>
   		<plugins>
+
   			<plugin>
   				<groupId>org.apache.maven.plugins</groupId>
   				<artifactId>maven-compiler-plugin</artifactId>
@@ -188,38 +189,35 @@
   		</plugins>
   	</build>
 
-
-  	<!-- to sign a file: gpg -ab somefile.jar to verify: gpg (dashdash)verify 
-  		somefile.jar.asc -->
-  	<profiles>
-  		<profile>
-  			<id>release-sign-artifacts</id>
-  			<activation>
-  				<property>
-  					<name>performRelease</name>
-  					<value>true</value>
-  				</property>
-  			</activation>
-  			<build>
-  				<plugins>
-  					<plugin>
-  						<groupId>org.apache.maven.plugins</groupId>
-  						<artifactId>maven-gpg-plugin</artifactId>
-  						<version>1.1</version>
-  						<executions>
-  							<execution>
-  								<id>sign-artifacts</id>
-  								<phase>verify</phase>
-  								<goals>
-  									<goal>sign</goal>
-  								</goals>
-  							</execution>
-  						</executions>
-  					</plugin>
-  				</plugins>
-  			</build>
-  		</profile>
-  	</profiles>
-
+<!-- https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven#HowToGeneratePGPSignaturesWithMaven-ListKeys -->
+<profiles>
+  <profile>
+    <id>release-sign-artifacts</id>
+    <activation>
+      <property>
+        <name>performRelease</name>
+        <value>true</value>
+      </property>
+    </activation>
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>1.1</version>
+          <executions>
+            <execution>
+              <id>sign-artifacts</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>sign</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
+    </build>
+  </profile>
+</profiles>
 
   </project>
