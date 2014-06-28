@@ -17,7 +17,6 @@
   	
     <modules>
       <module>rendersnake</module>
-      <module>rendersnake-site</module>
       <module>rendersnake-tryouts</module>
   </modules>
 
