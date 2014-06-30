@@ -97,3 +97,11 @@ public class LoginPageContent implements Renderable {
     }        
 }
 ```
+Maven Installation
+````
+<dependency>
+    <groupId>org.rendersnake</groupId>
+    <artifactId>rendersnake</artifactId>
+    <version>1.8</version>
+</dependency>
+```
