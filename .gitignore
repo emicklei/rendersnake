@@ -5,3 +5,4 @@ rendersnake-site/target
 *.releaseBackup
 release.properties
 target
+.project
