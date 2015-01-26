@@ -1,13 +1,15 @@
 package org.rendersnake.internal;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collection;
+import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * A nested hash-based <code>Map</code> implementation.
@@ -19,13 +21,9 @@ import java.util.Set;
  */
 public class StackedMap implements Map<String, Object> {
 
-    public static int MAX_STACK_DEPTH = 16; // tuneable parameters
     public static int INITIAL_MAP_CAPACITY = 7;
-    private HashMap<String,Object>[] stack;
-    /**
-     * The current depth. Initially 0 (after construction).
-     */
-    private int depth = -1;    
+    private Deque<Map<String,Object>> stack;
+
     /**
      * Constructs an empty <code>StackedMap</code>.
      */
@@ -53,8 +51,7 @@ public class StackedMap implements Map<String, Object> {
      */
     @SuppressWarnings("unchecked")
     private void init() {
-        this.depth = -1;
-        this.stack = new HashMap[MAX_STACK_DEPTH];
+        this.stack = new ArrayDeque<Map<String,Object>>();
         this.push();
     }    
     /**
@@ -66,13 +63,7 @@ public class StackedMap implements Map<String, Object> {
      * depth unavailable.
      */
     public void push() {
-        this.depth++;
-        Map<String,Object> existing = this.stack[depth];
-        if (existing == null) {
-            this.stack[depth] = new HashMap<String,Object>(INITIAL_MAP_CAPACITY);
-        } else {
-           existing.clear(); 
-        }
+        stack.addFirst(new HashMap<String,Object>(INITIAL_MAP_CAPACITY));
     }
     /**
      * Decreases the depth of the stack of maps, effectively removing all
@@ -86,9 +77,10 @@ public class StackedMap implements Map<String, Object> {
      *    if <code>getDepth() == 0</code>.
      */
     public void pop() {
-        if (this.depth == 0)
+        if (stack.size() == 1)
             throw new IllegalStateException("getDepth() == 0");
-        this.depth--;
+
+        stack.removeFirst();
     }
     /**
      * Returns the depth of the stack.
@@ -97,7 +89,7 @@ public class StackedMap implements Map<String, Object> {
      *    the depth of the stack, always &gt;= 0.
      */
     public int getDepth() {
-        return this.depth;
+        return stack.size();
     }
     /**
      * Retrieves the map at the top of the stack.
@@ -105,72 +97,57 @@ public class StackedMap implements Map<String, Object> {
      * @return
      *    the {@link HashMap} at the top of the stack ; can be <code>null</code>
      */
-    private HashMap<String, Object> top() {
-        return this.stack[depth];
+    private Map<String, Object> top() {
+        return this.stack.peekFirst();
     }
     
     //
     // Map API
     //
     public void clear() {
-        for(HashMap<String,Object> each : stack) {
-            if (each != null) each.clear();
+        for(Map<String,Object> each : stack) {
+            each.clear();
         }
     }
 
     public boolean containsKey(Object key) {
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
-            if (here != null && here.containsKey(key))
+        for (Map<String,Object> here : stack) {
+            if (here.containsKey(key)) {
                 return true;
-            else
-                level--;
+            }
         }
         return false;
     }
 
     public boolean containsValue(Object value) {
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
-            if (here.containsValue(value))
+        for (Map<String,Object> here : stack) {
+            if (here.containsValue(value)) {
                 return true;
-            else
-                level--;
+            }
         }
         return false;
     }
 
     public Set<java.util.Map.Entry<String, Object>> entrySet() {
         Set<java.util.Map.Entry<String, Object>> union = new HashSet<java.util.Map.Entry<String, Object>>();
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
+        for (Map<String,Object> here : stack) {
             union.addAll(here.entrySet());
-            level--;
         }
         return union;
     }
 
     public boolean isEmpty() {
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
-            if (!here.isEmpty())
+        for (Map<String,Object> here : stack) {
+            if (!here.isEmpty()) {
                 return false;
-            else
-                level--;
+            }
         }
         return true;
     }
     public Set<String> keySet() {
         Set<String> union = new HashSet<String>();
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
+        for (Map<String,Object> here : stack) {
             union.addAll(here.keySet());
-            level--;
         }
         return union;
     }
@@ -179,14 +156,16 @@ public class StackedMap implements Map<String, Object> {
         if (key == null)
            throw new IllegalArgumentException("key == null");
 
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
-            if (here != null && here.containsKey(key))
-                return here.get(key);
-            else
-                level--;
+        if (!String.class.isAssignableFrom(key.getClass()))
+            throw new IllegalArgumentException("key must be a string");
+
+        String sKey = (String) key;
+        for (Map<String,Object> here : stack) {
+            if (here != null && here.containsKey(sKey)) {
+                return here.get(sKey);
+            }
         }
+
         return null;
     }
 
@@ -206,24 +185,18 @@ public class StackedMap implements Map<String, Object> {
     // note: returns the first non-null value removed
     public Object remove(Object key) {
         Object objectToReturn = null;
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
+        for (Map<String,Object> here : stack) {
             final Object value = here.remove(key);
             if (objectToReturn == null)
                 objectToReturn = value; // may still be null
-            level--;
         }
         return objectToReturn;
     }
 
     public int size() {
         int total = 0;
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
+        for (Map<String,Object> here : stack) {
             total += here.size();
-            level--;
         }
         return total;
     }
@@ -243,11 +216,8 @@ public class StackedMap implements Map<String, Object> {
     @Override
     public int hashCode() {
         int hash = 0;
-        int level = depth;
-        while (level != -1) {
-            final HashMap<String, Object> here = stack[level];
+        for (Map<String,Object> here : stack) {
             hash = hash | here.hashCode();
-            level--;
         }
         return hash;
     }
@@ -259,14 +229,8 @@ public class StackedMap implements Map<String, Object> {
     public boolean equals(Object otherMap) {
         if (!(otherMap instanceof StackedMap))
             return false;
-        StackedMap otherStackedMap = (StackedMap) otherMap;
-        int level = depth;
-        while (level != -1) {
-            if (!stack[level].equals(otherStackedMap.stack[level]))
-                return false;
-            level--;
-        }
-        return true;
+
+        return this.entrySet().equals(((StackedMap) otherMap).entrySet());
     }
     
     /**
@@ -276,9 +240,8 @@ public class StackedMap implements Map<String, Object> {
     public String toString() {
         StringBuilder sb = new StringBuilder(64);
         sb.append('[');
-        Object[] keys = this.keySet().toArray();
-        Arrays.sort(keys);
-        for (Object each : keys) {
+        Set<String> keys = new TreeSet<String>(this.keySet());
+        for (String each : keys) {
             sb  .append(each)
                 .append('=')
                 .append(this.get(each))
