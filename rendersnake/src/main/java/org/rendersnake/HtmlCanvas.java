@@ -6591,7 +6591,8 @@ public class HtmlCanvas {
      */
     public HtmlCanvas _meter() throws IOException {
         return this.close("</meter>");
-    }        /**
+    }        
+    /**
      * Defines navigation links.
      *
      * Opens the <em>nav</em> tag, without any attributes.
@@ -6637,7 +6638,8 @@ public class HtmlCanvas {
      */
     public HtmlCanvas _nav() throws IOException {
         return this.close("</nav>");
-    }        /**
+    }        
+    /**
      * Defines some types of output.
      *
      * Opens the <em>output</em> tag, without any attributes.
@@ -7144,6 +7146,54 @@ public class HtmlCanvas {
     public HtmlCanvas _wbr() throws IOException {
         return this.close("</wbr>");
     }  
+
+    /**
+     * Defines the main content of a document.
+     *
+     * Opens the <em>main</em> tag, without any attributes.
+     *
+     * <p>Close this tag by calling {@link #_main()} (the end tag is required).
+     *
+     * @return the receiver, this <code>HtmlCanvas</code> instance.
+     * @throws IOException in case of an I/O error.
+     * @since HTML5
+     */
+    public HtmlCanvas main() throws IOException {
+        out.write("<main>");
+        openTagStack.add("</main>");
+        return this;
+    }
+
+    /**
+     * Defines the main content of a document.
+     *
+     * Opens the <em>main</em> tag, with the specified attributes.
+     *
+     * <p>Close this tag by calling {@link #_main()} (the end tag is required).
+     *
+     * @param attrs the {@link CharactersWriteable}, or <code>null</code> if none.
+     * @return the receiver, this <code>HtmlCanvas</code> instance.
+     * @throws IOException in case of an I/O error.
+     * @since HTML5
+     */
+    public HtmlCanvas main(CharactersWriteable attrs) throws IOException {
+        out.write("<main");
+        if (attrs != null)
+            attrs.writeCharsOn(out);
+        out.write('>');
+        openTagStack.add("</main>");
+        return this;
+    }
+    
+    /**
+     * Closes the <em>main</em> tag.
+     *
+     * @throws IOException in case of an I/O error while writing the end tag.
+     * @since HTML5     
+     */
+    public HtmlCanvas _main() throws IOException {
+        return this.close("</main>");
+    }        
     
     /**
      * Convenience method that write the integer value (if not null).

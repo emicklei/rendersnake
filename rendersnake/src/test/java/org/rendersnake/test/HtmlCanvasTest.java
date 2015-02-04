@@ -31,6 +31,11 @@ public class HtmlCanvasTest extends TestCase {
         assertEquals("/*<![CDATA[*/function onLoad(){};/*]]>*/",html.toHtml());
     }
     
+    public void testFavicon() throws Exception {
+    	html.macros().favicon("favicon.ico");
+    	assertEquals("<link href=\"favicon.ico\" rel=\"shortcut icon\"/>",html.toHtml());
+    }
+    
     public void testNextId() {
         assertEquals("id1", html.nextId());
         assertEquals("id2", html.nextId());

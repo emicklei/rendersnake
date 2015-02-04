@@ -1236,4 +1236,14 @@ public class GeneratedHtmlCanvasTest extends TestCase {
     public void test_wbr_attrs() throws Exception {
         assertEquals("<wbr></wbr>", html.wbr(new HtmlAttributes())._wbr().toHtml());
     }
+    public void test_main() throws Exception {
+        assertEquals("<main></main>", html.main()._main().toHtml());
+    }
+    public void test_main_null() throws Exception {
+        assertEquals("<main></main>", html.main(null)._main().toHtml());
+    }
+    public void test_main_attrs() throws Exception {
+        assertEquals("<main></main>", html.main(new HtmlAttributes())._main().toHtml());
+    }
+    
 }

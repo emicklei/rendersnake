@@ -1,7 +1,6 @@
 package org.rendersnake;
 
 import static org.rendersnake.HtmlAttributesFactory.*;
-
 import java.io.IOException;
 /**
  * CanvasMacros is a helper class that provides convenience methods for common HTML constructions.
@@ -33,7 +32,7 @@ public class CanvasMacros<T extends HtmlCanvas> {
     }
     /**
      * Write the link tag with a reference to the external resource.
-     * @param code
+     * @param cssHref
      * @return the canvas
      * @throws IOException
      */    
@@ -64,5 +63,17 @@ public class CanvasMacros<T extends HtmlCanvas> {
         canvas.cdata();
         canvas.write(cdata,NO_ESCAPE);
         return (T)canvas._cdata();
-    }    
+    }
+
+    /**
+     * Write the link tag with a reference to the favicon.
+     * @param iconHref
+     * @return the canvas
+     * @throws IOException
+     */
+    public T favicon(String iconHref) throws IOException {
+    	return (T)canvas
+            .link(href(iconHref)
+            .rel("shortcut icon"));
+    }
 }
