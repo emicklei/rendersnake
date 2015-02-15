@@ -104,6 +104,6 @@ Maven Installation
 <dependency>
     <groupId>org.rendersnake</groupId>
     <artifactId>rendersnake</artifactId>
-    <version>1.8</version>
+    <version>1.9</version>
 </dependency>
 ```
