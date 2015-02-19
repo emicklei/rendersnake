@@ -18,6 +18,9 @@ public class StringEscapeUtils implements HtmlEscapeHandler {
     
     private StringEscapeUtils() {}
 
+    /**
+     * 
+     */
     public static void init() {
         // Try to setup the HtmlEscapeHandler for HtmlCanvas
         // Log a warning if the apache commons handler is not available.
@@ -40,6 +43,11 @@ public class StringEscapeUtils implements HtmlEscapeHandler {
         this.escapeXml(out, text);        
     }
 
+    /**
+     * @param out
+     * @param text
+     * @throws IOException
+     */
     public void escapeXml(Writer out, String text) throws IOException {
         /**
          * See google groups
@@ -62,6 +70,11 @@ public class StringEscapeUtils implements HtmlEscapeHandler {
         }           
     }
 
+    /**
+     * @param out
+     * @param text
+     * @throws IOException
+     */
     public void escapeEcmascript(Writer out, String text) throws IOException {
         /**
          * http://www.squarefree.com/securitytips/web-developers.html
@@ -82,6 +95,11 @@ public class StringEscapeUtils implements HtmlEscapeHandler {
         }       
     }   
     // http://www.fiveanddime.net/HTMLescapeCodes.html
+    /**
+     * @param out
+     * @param input
+     * @throws IOException
+     */
     public static void escapeISOCharacters(Writer out, String input) throws IOException {
         for (int i=0;i<input.length();i++) {
             char each = input.charAt(i);

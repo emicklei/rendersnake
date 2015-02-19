@@ -2729,8 +2729,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onOffline(String script) {
-        return this.addScript("onoffline", script, ESCAPE_CHARS);
+    public HtmlAttributes onOffline(String onoffline) {
+        return this.addScript("onoffline", onoffline, ESCAPE_CHARS);
     }
     /**
      * Append the <em>ononline</em> attribute with the given String parameter as its value.
@@ -2743,8 +2743,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onOnline(String script) {
-        return this.addScript("ononline", script, ESCAPE_CHARS);
+    public HtmlAttributes onOnline(String ononline) {
+        return this.addScript("ononline", ononline, ESCAPE_CHARS);
     }
     /**
      * Append the <em>onpagehide</em> attribute with the given String parameter as its value.
@@ -2757,8 +2757,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onPagehide(String script) {
-        return this.addScript("onpagehide", script, ESCAPE_CHARS);
+    public HtmlAttributes onPagehide(String onpagehide) {
+        return this.addScript("onpagehide", onpagehide, ESCAPE_CHARS);
     }
     /**
      * Append the <em>onpageshow</em> attribute with the given String parameter as its value.
@@ -2771,8 +2771,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onPageshow(String script) {
-        return this.addScript("onpageshow", script, ESCAPE_CHARS);
+    public HtmlAttributes onPageshow(String onpageshow) {
+        return this.addScript("onpageshow", onpageshow, ESCAPE_CHARS);
     }
     /**
      * Append the <em>onpopstate</em> attribute with the given String parameter as its value.
@@ -2785,8 +2785,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onPopstate(String script) {
-        return this.addScript("onpopstate", script, ESCAPE_CHARS);
+    public HtmlAttributes onPopstate(String onpopstate) {
+        return this.addScript("onpopstate", onpopstate, ESCAPE_CHARS);
     }
     /**
      * Append the <em>onredo</em> attribute with the given String parameter as its value.
@@ -2799,8 +2799,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onRedo(String script) {
-        return this.addScript("onredo", script, ESCAPE_CHARS);
+    public HtmlAttributes onRedo(String onredo) {
+        return this.addScript("onredo", onredo, ESCAPE_CHARS);
     }
     /**
      * Append the <em>onresize</em> attribute with the given String parameter as its value.
@@ -2813,8 +2813,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onResize(String script) {
-        return this.addScript("onresize", script, ESCAPE_CHARS);
+    public HtmlAttributes onResize(String onresize) {
+        return this.addScript("onresize", onresize, ESCAPE_CHARS);
     }
     /**
      * Append the <em>onstorage</em> attribute with the given String parameter as its value.
@@ -2827,8 +2827,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onStorage(String script) {
-        return this.addScript("onstorage", script, ESCAPE_CHARS);
+    public HtmlAttributes onStorage(String onstorage) {
+        return this.addScript("onstorage", onstorage, ESCAPE_CHARS);
     }
     /**
      * Append the <em>onundo</em> attribute with the given String parameter as its value.
@@ -2841,8 +2841,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
      */
-    public HtmlAttributes onUndo(String script) {
-        return this.addScript("onundo", script, ESCAPE_CHARS);
+    public HtmlAttributes onUndo(String onundo) {
+        return this.addScript("onundo", onundo, ESCAPE_CHARS);
     }
     //
     // Methods below are for convencience when using e.g. JQuery mobile 
@@ -2907,6 +2907,10 @@ checked</p>
     }
 
     // xhtml(5) http://stackoverflow.com/questions/1678238/what-is-xhtmls-role-attribute-what-do-you-use-it-for
+    /**
+     * @param role
+     * @return
+     */
     public HtmlAttributes role(String role) {
         return this.add("role", role, false);
     }

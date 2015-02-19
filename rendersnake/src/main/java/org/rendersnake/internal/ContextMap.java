@@ -2,6 +2,10 @@ package org.rendersnake.internal;
 
 import java.util.Map;
 
+/**
+ * @author emicklei
+ *
+ */
 public interface ContextMap {
 
     /**

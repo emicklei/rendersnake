@@ -9,5 +9,10 @@ import java.io.Writer;
  */
 public interface HtmlEscapeHandler {
     
+    /**
+     * @param out
+     * @param text
+     * @throws IOException
+     */
     void escapeHtml(Writer out, String text) throws IOException;
 }

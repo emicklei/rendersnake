@@ -12,14 +12,23 @@ public class WriteBuffer extends Writer {
     private int begin = 0;
     private int end = -1;
 
+    /**
+     * 
+     */
     public WriteBuffer() {
         this(64);
     }
 
+    /**
+     * @param initialCapacity
+     */
     public WriteBuffer(int initialCapacity) {
         buffer = new char[initialCapacity];
     }
 
+    /**
+     * 
+     */
     public void reset() {
         this.begin = 0;
         this.end = -1;
@@ -35,6 +44,9 @@ public class WriteBuffer extends Writer {
         return this;
     }
 
+    /**
+     * @param s
+     */
     public void append(String s) {
         int l = s.length();
         while (begin + l > buffer.length)
@@ -44,6 +56,9 @@ public class WriteBuffer extends Writer {
         this.end += l;
     }
 
+    /**
+     * @param integer
+     */
     public void append(int integer) {
         this.append(String.valueOf(integer));
     }
@@ -60,10 +75,17 @@ public class WriteBuffer extends Writer {
         buffer = newbuffer;
     }
 
+    /**
+     * @return
+     */
     public int length() {
         return end + 1;
     }
 
+    /**
+     * @param writer
+     * @throws IOException
+     */
     public void writeCharsOn(Writer writer) throws IOException {
         writer.write(buffer, 0, this.end + 1);
     }

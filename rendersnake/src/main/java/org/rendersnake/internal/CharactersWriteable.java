@@ -10,5 +10,9 @@ import java.io.Writer;
  * @author e.micklei
  */
 public interface CharactersWriteable {
+    /**
+     * @param writer
+     * @throws IOException
+     */
     void writeCharsOn(Writer writer) throws IOException;
 }

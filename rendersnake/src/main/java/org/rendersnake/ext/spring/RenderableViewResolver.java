@@ -46,6 +46,9 @@ public class RenderableViewResolver implements ViewResolver, ApplicationContextA
         this.appCtx = applicationContext;
     }
 
+    /**
+     * @param contentType
+     */
     public void setContentType(String contentType) {
         this.contentType = contentType;
     }
