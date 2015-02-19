@@ -7,7 +7,7 @@ import java.io.IOException;
  * a site layout. Because RenderableWrapper itself implements Renderable,
  * decoration can be nested.
  * 
- * <p/>
+ * <br>
  * Example usage:
  * 
  * <pre>
@@ -31,6 +31,9 @@ public abstract class RenderableWrapper implements Renderable {
      */
     protected Renderable component; 
 
+    /**
+     * @param component
+     */
     public RenderableWrapper(Renderable component) {
         if (null == component)
             throw new IllegalArgumentException("Attempt to create a wrapper on a null component");

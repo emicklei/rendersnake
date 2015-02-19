@@ -3,7 +3,7 @@ package org.rendersnake;
 import java.io.IOException;
 /**
  * Implementors can be rendered using a HtmlCanvas.
- * <p/>
+ * <br>
  * An IOException is thrown when the html cannot write its tags.
  * 
  * @author ernestmicklei

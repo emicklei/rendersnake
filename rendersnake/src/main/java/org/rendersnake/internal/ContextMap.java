@@ -18,7 +18,7 @@ public interface ContextMap {
      * Add (or overwrite) a key,Boolean pair to the Map. Return the Map.
      * 
      * @param key
-     * @param value
+     * @param trueOrFalse
      * @return
      */
     ContextMap withBoolean(String key, Boolean trueOrFalse);
@@ -37,7 +37,7 @@ public interface ContextMap {
      * Add (or overwrite) a key,Long pair to the Map. Return the Map.
      * 
      * @param key
-     * @param value
+     * @param aLong
      * @return
      */
     ContextMap withLong(String key, Long aLong);
@@ -56,7 +56,7 @@ public interface ContextMap {
      * Add (or overwrite) a key,Float pair to the Map. Return the Map.
      * 
      * @param key
-     * @param value
+     * @param aFloat
      * @return
      */
     ContextMap withFloat(String key, Float aFloat);
@@ -75,7 +75,7 @@ public interface ContextMap {
      * Add (or overwrite) a key,Integer pair to the Map. Return the Map.
      * 
      * @param key
-     * @param value
+     * @param anInteger
      * @return
      */
     ContextMap withInteger(String key, Integer anInteger);

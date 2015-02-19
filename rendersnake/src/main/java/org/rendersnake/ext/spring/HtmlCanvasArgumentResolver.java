@@ -1,7 +1,5 @@
 package org.rendersnake.ext.spring;
 
-import java.util.Enumeration;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -10,14 +8,13 @@ import org.rendersnake.PageContext;
 import org.rendersnake.ext.servlet.RequestHeadersMap;
 import org.rendersnake.ext.servlet.RequestParametersMap;
 import org.rendersnake.ext.servlet.SessionAttributesMap;
-import org.rendersnake.internal.SimpleContextMap;
 import org.springframework.core.MethodParameter;
 import org.springframework.web.bind.support.WebArgumentResolver;
 import org.springframework.web.context.request.NativeWebRequest;
 /**
  * HtmlCanvasArgumentResolver is a Spring Helper that is used
  * to prepare html arguments before invoking a Controller method.
- * <p><pre>
+ * <pre>
  * {@code
  * <!-- This Resolver exists for renderSnake HtmlCanvas parameter processing -->
  * <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
@@ -26,7 +23,7 @@ import org.springframework.web.context.request.NativeWebRequest;
  *     </bean>
  *   </property>
  * </bean>} 
- * </pre></p>
+ * </pre>
  * @author e.micklei
  **/
 public class HtmlCanvasArgumentResolver implements WebArgumentResolver {

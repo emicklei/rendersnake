@@ -37,6 +37,8 @@ public class PageContext implements ContextMap {
     
     /**
      * Answer a ContextAttributesAccess by a key
+     * @param key 
+     * @return 
      */
     public ContextMap getContextMap(String key) {
         return (ContextMap)attributes.get(key);
@@ -45,7 +47,7 @@ public class PageContext implements ContextMap {
     /**
      * Store a value accessed by a key
      * @param key , not null
-     * @param value, any object
+     * @param value , any object
      * @return this
      */
     public PageContext withObject(String key, Object value) {
@@ -179,6 +181,7 @@ public class PageContext implements ContextMap {
     }
     /**
      * Render inspection information using the (debug) html
+     * @param inspector 
      * @param html
      * @throws IOException
      */

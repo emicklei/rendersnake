@@ -9,27 +9,45 @@ import org.rendersnake.Renderable;
 import static org.rendersnake.HtmlAttributesFactory.*;
 /**
  * RenderException is a RuntimeException that is thrown in the following cases
+ * <ul>
  * <li>sending close() when there is no open tag
  * <li>sending close(someTag) where otherTag was expected
  * <li>general exception occurred when rendering a component
+ * </ul>
  * 
  * @author ernest
  */
 public class RenderException extends RuntimeException implements Renderable {    
     private static final long serialVersionUID = 5155772408981115672L;
+    /**
+     * 
+     */
     public static final String KEY_PAGECONTEXT = "renderable.error";
 
+    /**
+     * 
+     */
     public boolean isNullTag = false;
+    /**
+     * 
+     */
     public boolean isEmptyStack = false;
+    /**
+     * 
+     */
     public String expectedTag = null;
+    /**
+     * 
+     */
     public String closingTag = null;
+    /**
+     * 
+     */
     public Exception exception = null;
 
     /**
      * Return a new RenderException for the situation that a different tag is being close than expected.
      * This indicates that a required close tag was not sent.
-     * @param expected , what should have been the close tag
-     * @param actual , what the program is trying to close
      * @return
      */
     public static RenderException nullTag() {

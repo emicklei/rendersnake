@@ -85,6 +85,7 @@ public class StringResource implements Renderable {
     /**
      * Access the String contents from the given resource location.
      * @param location
+     * @param doCache 
      * @return resource contents , never null
      */
     public static String get(String location, boolean doCache) {

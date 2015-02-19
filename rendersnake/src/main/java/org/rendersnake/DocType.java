@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * DocType is used to set the doctype of markup language based document such as HTML and XML.
  * 
- * @see http://www.w3schools.com/tags/tag_DOCTYPE.asp
+ * @see "http://www.w3schools.com/tags/tag_DOCTYPE.asp"
  * @author e.micklei
  */
 public enum DocType implements Renderable {

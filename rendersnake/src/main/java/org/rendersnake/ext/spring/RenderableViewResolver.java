@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ViewResolver;
  * a Renderable component in the application context.
  * If such a component is found then create a new RenderableView to
  * perform the actual rendering on a HtmlCanvas.
- * <p/>
+ *
  * Usage in servlet-config.xml
  * <p>
  * {@code

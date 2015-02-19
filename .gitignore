@@ -6,3 +6,7 @@ rendersnake-site/target
 release.properties
 target
 .project
+pom.xml.versionsBackup
+rendersnake/.classpath
+rendersnake/pom.xml.versionsBackup
+rendersnake-tryouts/pom.xml.versionsBackup
