@@ -21,6 +21,9 @@ import java.util.TreeSet;
  */
 public class StackedMap implements Map<String, Object> {
 
+    /**
+     * 
+     */
     public static int INITIAL_MAP_CAPACITY = 7;
     private Deque<Map<String,Object>> stack;
 

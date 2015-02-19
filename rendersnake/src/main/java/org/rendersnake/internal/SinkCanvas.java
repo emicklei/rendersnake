@@ -12,6 +12,9 @@ import org.rendersnake.Renderable;
  */
 public class SinkCanvas extends HtmlCanvas {
     private HtmlCanvas parentCanvas;
+    /**
+     * @param parent
+     */
     public SinkCanvas(HtmlCanvas parent) {
         super();
         this.parentCanvas = parent;
@@ -26,5 +29,8 @@ public class SinkCanvas extends HtmlCanvas {
     public PageContext getPageContext() { return parentCanvas.getPageContext(); }
     public String nextId() { return parentCanvas.nextId(); }
     public HtmlCanvas render(Renderable component) { return this; }
+    /**
+     * @return
+     */
     public HtmlCanvas _render_inside() { return this; }
 }

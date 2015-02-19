@@ -103,6 +103,7 @@ public class HtmlCanvas {
     /**
      * Create a new empty canvas based on the receiver.
      * NOTE: Id generation will no longer work for the local canvas.
+     * @return 
      */
     public HtmlCanvas createLocalCanvas(){
         return new HtmlCanvas();
@@ -183,7 +184,7 @@ public class HtmlCanvas {
     /**
      * Write a character. No need to close().
      * 
-     * @param character
+     * @param ch
      * @return HTMLCanvas , the receiver
      * @throws IOException
      */
@@ -230,7 +231,7 @@ public class HtmlCanvas {
      * Close the most recent opened tag.
      * 
      * @return the receiver, a HtmlCanvas
-     * @throws IOException, RenderException
+     * @throws IOException
      */
     public HtmlCanvas close() throws IOException {
         if (openTagStack.isEmpty())
@@ -241,9 +242,10 @@ public class HtmlCanvas {
 
     /**
      * Close the most recent opened tag and expect it to be #expectedTag
+     * @param expectedTag 
      * 
      * @return the receiver, a HtmlCanvas
-     * @throws IOException, RenderException
+     * @throws IOException
      */
     public HtmlCanvas close(String expectedTag) throws IOException {
         if (openTagStack.isEmpty())
@@ -288,7 +290,6 @@ public class HtmlCanvas {
     }
     /**
      * Factory method for an HtmlAttributes instance.
-     * <p/>
      * This allows for subclass specialization. Also conforms to the fluent
      * interface compared to "new HtmlAttributes()"
      * 
@@ -299,7 +300,7 @@ public class HtmlCanvas {
     }
 
     /**
-     * Write the open tag &lt;{tagName}>. Requires close().
+     * Write the open tag &lt;{tagName}&gt;. Requires close().
      * 
      * @param tagName
      *            String, cannot be null
@@ -320,6 +321,11 @@ public class HtmlCanvas {
         return this;
     }
 
+    /**
+     * @param tagName
+     * @return
+     * @throws IOException
+     */
     public HtmlCanvas tag_close(String tagName) throws IOException {
         if (tagName == null)
             throw RenderException.nullTag();
@@ -395,7 +401,6 @@ public class HtmlCanvas {
      * If the condition is true then return the receiver
      * otherwise return a SinkCanvas that consumes all tags until the last is closed.
      * @param condition
-     * @param component
      * @return
      * @throws IOException
      */
@@ -490,6 +495,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>a</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -551,6 +557,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>abbr</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -612,6 +619,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>acronym</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -673,6 +681,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>em</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -734,6 +743,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>strong</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -795,6 +805,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>cite</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -856,6 +867,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>dfn</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -917,6 +929,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>code</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -978,6 +991,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>samp</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1039,6 +1053,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>kbd</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1100,6 +1115,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>var</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1161,6 +1177,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>address</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1225,6 +1242,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>applet</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1402,6 +1420,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>b</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -2033,6 +2052,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>bdo</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -2282,8 +2302,6 @@ public class HtmlCanvas {
     /**
      * Opens the (deprecated) <em>center</em> tag, without any attributes.
      * This tag does not support any attributes.
-     *
-     * <p>Close this tag by calling {@link #_center()} (the end tag is required).
      *
      * @return the receiver, this <code>HtmlCanvas</code> instance.
      * @throws IOException in case of an I/O error.
@@ -5895,6 +5913,7 @@ public class HtmlCanvas {
     
     /**
      * Closes the <em>article</em> tag.
+     * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      * @since HTML5     
@@ -5941,6 +5960,7 @@ public class HtmlCanvas {
     
     /**
      * Closes the <em>aside</em> tag.
+     * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      * @since HTML5     
@@ -5987,6 +6007,7 @@ public class HtmlCanvas {
     
     /**
      * Closes the <em>audio</em> tag.
+     * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      * @since HTML5     
@@ -7093,6 +7114,7 @@ public class HtmlCanvas {
     
     /**
      * Closes the <em>video</em> tag.
+     * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      * @since HTML5     
@@ -7142,6 +7164,10 @@ public class HtmlCanvas {
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      * @since HTML5     
+     */
+    /**
+     * @return
+     * @throws IOException
      */
     public HtmlCanvas _wbr() throws IOException {
         return this.close("</wbr>");

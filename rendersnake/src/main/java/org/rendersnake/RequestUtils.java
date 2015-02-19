@@ -16,6 +16,7 @@ public class RequestUtils {
     }
     /**
      * @param html
+     * @param key 
      * @return aString | null which is the value of a parameter of the inbound Http request.
      */
     public static String getParameter(HtmlCanvas html, String key) {
@@ -63,7 +64,6 @@ public class RequestUtils {
     /**
      * 
      * @param html
-     * @param name
      * @return a ContextMap to access the Cookies passed in by the inbound Http request.
      */
     public static ContextMap getCookies(HtmlCanvas html) {

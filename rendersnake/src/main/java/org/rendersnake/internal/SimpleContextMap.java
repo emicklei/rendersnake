@@ -5,12 +5,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 
+/**
+ * @author emicklei
+ *
+ */
 public class SimpleContextMap implements Serializable, ContextMap {
     private static final long serialVersionUID = -6319488346145394221L;
     private Map<String, Serializable> attributes = new HashMap<String, Serializable>();
 
+    /**
+     * 
+     */
     public SimpleContextMap() { super(); }
     
+    /**
+     * @param attributesMap
+     */
     @SuppressWarnings("unchecked")
     public SimpleContextMap(Map<?,?> attributesMap) {
         this.attributes = (Map<String, Serializable>)attributesMap;

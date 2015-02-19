@@ -12,6 +12,9 @@ import java.io.IOException;
 public class CanvasMacros<T extends HtmlCanvas> {
     private T canvas;
     
+    /**
+     * @param canvas
+     */
     public CanvasMacros(T canvas) {
         super();
         this.canvas = canvas;

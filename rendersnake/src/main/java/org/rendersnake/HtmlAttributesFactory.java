@@ -1,11 +1,18 @@
 package org.rendersnake;
 
 
+/**
+ * @author emicklei
+ *
+ */
 public abstract class HtmlAttributesFactory {
     /**
      * Intention revealing constant to emphasize that escaping for a text item is needed or not.
      */
     public final static boolean NO_ESCAPE = false;    
+    /**
+     * the reverse
+     */
     public final static boolean ESCAPE_CHARS = true;    
           
     /**
@@ -22,23 +29,40 @@ public abstract class HtmlAttributesFactory {
     public static HtmlAttributes xmlns(String xmlns) {
         return new HtmlAttributes().add("xmlns", xmlns, ESCAPE_CHARS);
     }     
-    // TODO comment
+    /**
+     * @param flashvars
+     * @return a HtmlAttributes
+     */
     public static HtmlAttributes flashvars(String flashvars) {
         return new HtmlAttributes().add("flashvars", flashvars, ESCAPE_CHARS);
     }  
+    /**
+     * @param allow
+     * @return a HtmlAttributes
+     */
     public static HtmlAttributes allowFullscreen(boolean allow) {
         return new HtmlAttributes().add("allowFullScreen", Boolean.toString(allow), NO_ESCAPE);
     }    
+    /**
+     * @param allow
+     * @return  a HtmlAttributes
+     */
     public static HtmlAttributes allowScriptAccess(String allow) {
         return new HtmlAttributes().add("allowScriptAccess", allow, ESCAPE_CHARS);
     }     
+    /**
+     * @param key
+     * @param value
+     * @param escapeNeeded
+     * @return  a HtmlAttributes
+     */
     public static HtmlAttributes add(String key,String value,boolean escapeNeeded) {
         return new HtmlAttributes().add(key,value,escapeNeeded);
     }
     /**
      * If condition is true then add the attribute selected with value "selected".
      * @param condition
-     * @return
+     * @return a HtmlAttributes
      */        
     public static HtmlAttributes selected_if(boolean condition) {
         return new HtmlAttributes().selected_if(condition);
@@ -46,7 +70,7 @@ public abstract class HtmlAttributesFactory {
     /**
      * If condition is true then add the attribute checked with value "checked".
      * @param condition
-     * @return
+     * @return  a HtmlAttributes
      */        
     public static HtmlAttributes checked__if(boolean condition) {
         return new HtmlAttributes().checked_if(condition);
@@ -54,7 +78,7 @@ public abstract class HtmlAttributesFactory {
     /**
      * If condition is true then add the attribute disabled with value "disabled".
      * @param condition
-     * @return
+     * @return  a HtmlAttributes
      */        
     public static HtmlAttributes disabled_if(boolean condition) {
         return new HtmlAttributes().disabled_if(condition);
@@ -62,7 +86,7 @@ public abstract class HtmlAttributesFactory {
     /**
      * If condition is true then add the attribute autofocus with value "autofocus".
      * @param condition
-     * @return
+     * @return  a HtmlAttributes
      */        
     public static HtmlAttributes autofocus_if(boolean condition) {
         return new HtmlAttributes().autofocus_if(condition);
@@ -70,7 +94,7 @@ public abstract class HtmlAttributesFactory {
     /**
      * If condition is true then add the attribute required with value "required".
      * @param condition
-     * @return
+     * @return a HtmlAttributes
      */    
     public static HtmlAttributes required_if(boolean condition) {
         return new HtmlAttributes().required_if(condition);
@@ -120,7 +144,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of for will be XML escaped. 
      * Use new HtmlAttributes().add("for",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param for the String | null.
+     * @param for_ the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -162,10 +186,10 @@ public abstract class HtmlAttributesFactory {
      *
      * <p>list of supported charsets</p>
      *
-     * <p>The value of accept-charset will be XML escaped. 
-     * Use new HtmlAttributes().add("accept-charset",<i>value</i>,false) if the value does not have characters that need escaping.</p>
+     * <p>The value of accept_charset will be XML escaped. 
+     * Use new HtmlAttributes().add("accept_charset",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param accept-charset the String | null.
+     * @param accept_charset the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -237,10 +261,10 @@ public abstract class HtmlAttributesFactory {
      *
      * <p>a pointer button was double clicked</p>
      *
-     * <p>The value of ondblclick will be XML escaped. 
-     * Use new HtmlAttributes().add("ondblclick",<i>value</i>,false) if the value does not have characters that need escaping.</p>
+     * <p>The value of onDblclick will be XML escaped. 
+     * Use new HtmlAttributes().add("onDblclick",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param ondblclick the String | null.
+     * @param onDblclick the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -368,14 +392,14 @@ public abstract class HtmlAttributesFactory {
         return new HtmlAttributes().add("start", start, ESCAPE_CHARS);
     }
     /**
-     * Return a new HtmlAttributes with the <em>onmousedown</em> attribute and the given String parameter as its value.
+     * Return a new HtmlAttributes with the <em>onMousedown</em> attribute and the given String parameter as its value.
      *
      * <p>a pointer button was pressed down</p>
      *
-     * <p>The value of onmousedown will be XML escaped. 
-     * Use new HtmlAttributes().add("onmousedown",<i>value</i>,false) if the value does not have characters that need escaping.</p>
+     * <p>The value of onMousedown will be XML escaped. 
+     * Use new HtmlAttributes().add("onMousedown",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onmousedown the String | null.
+     * @param onMousedown the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -492,10 +516,10 @@ public abstract class HtmlAttributesFactory {
      *
      * <p>the document has been removed</p>
      *
-     * <p>The value of onunload will be XML escaped. 
-     * Use new HtmlAttributes().add("onunload",<i>value</i>,false) if the value does not have characters that need escaping.</p>
+     * <p>The value of onUnload will be XML escaped. 
+     * Use new HtmlAttributes().add("onUnload",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onunload the String | null.
+     * @param onUnload the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -522,7 +546,8 @@ public abstract class HtmlAttributesFactory {
      *
      * <p>The value of data will be XML escaped
      * Use new HtmlAttributes().add("data-" + extension,<i>data</i>,false) if the value does not have characters that need escaping.</p>
-     *     
+     * 
+     * @param extension 
      * @param data the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5      
@@ -576,14 +601,14 @@ public abstract class HtmlAttributesFactory {
         return new HtmlAttributes().add("version", version, ESCAPE_CHARS);
     }
     /**
-     * Return a new HtmlAttributes with the <em>http-equiv</em> attribute and the given String parameter as its value.
+     * Return a new HtmlAttributes with the <em>http_equiv</em> attribute and the given String parameter as its value.
      *
      * <p>HTTP response header name</p>
      *
-     * <p>The value of http-equiv will be XML escaped. 
-     * Use new HtmlAttributes().add("http-equiv",<i>value</i>,false) if the value does not have characters that need escaping.</p>
+     * <p>The value of http_equiv will be XML escaped. 
+     * Use new HtmlAttributes().add("http_equiv",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param http-equiv the String | null.
+     * @param http_equiv the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -733,7 +758,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onkeydown will be XML escaped. 
      * Use new HtmlAttributes().add("onkeydown",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onkeydown the String | null.
+     * @param onKeydown the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -748,7 +773,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onkeypress will be XML escaped. 
      * Use new HtmlAttributes().add("onkeypress",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onkeypress the String | null.
+     * @param onKeypress the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -763,7 +788,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onsubmit will be XML escaped. 
      * Use new HtmlAttributes().add("onsubmit",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onsubmit the String | null.
+     * @param onSubmit the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -928,7 +953,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of char will be XML escaped. 
      * Use new HtmlAttributes().add("char",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param char the String | null.
+     * @param char_ the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1063,7 +1088,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onblur will be XML escaped. 
      * Use new HtmlAttributes().add("onblur",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onblur the String | null.
+     * @param onBlur the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1138,7 +1163,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onmouseout will be XML escaped. 
      * Use new HtmlAttributes().add("onmouseout",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onmouseout the String | null.
+     * @param onMouseout the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1198,7 +1223,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of class will be XML escaped. 
      * Use new HtmlAttributes().add("class",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param class the String | null.
+     * @param class_ the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1213,7 +1238,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onkeyup will be XML escaped. 
      * Use new HtmlAttributes().add("onkeyup",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onkeyup the String | null.
+     * @param onKeyup the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1243,7 +1268,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onfocus will be XML escaped. 
      * Use new HtmlAttributes().add("onfocus",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onfocus the String | null.
+     * @param onFocus the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1333,7 +1358,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onreset will be XML escaped. 
      * Use new HtmlAttributes().add("onreset",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onreset the String | null.
+     * @param onReset the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1378,7 +1403,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onselect will be XML escaped. 
      * Use new HtmlAttributes().add("onselect",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onselect the String | null.
+     * @param onSelect the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1603,7 +1628,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onmouseup will be XML escaped. 
      * Use new HtmlAttributes().add("onmouseup",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onmouseup the String | null.
+     * @param onMouseup the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1693,7 +1718,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onmousemove will be XML escaped. 
      * Use new HtmlAttributes().add("onmousemove",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onmousemove the String | null.
+     * @param onMousemove the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1723,7 +1748,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onchange will be XML escaped. 
      * Use new HtmlAttributes().add("onchange",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onchange the String | null.
+     * @param onChange the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1753,7 +1778,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onmouseover will be XML escaped. 
      * Use new HtmlAttributes().add("onmouseover",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onmouseover the String | null.
+     * @param onMouseover the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1798,7 +1823,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onload will be XML escaped. 
      * Use new HtmlAttributes().add("onload",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onload the String | null.
+     * @param onLoad the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1828,7 +1853,7 @@ public abstract class HtmlAttributesFactory {
      * <p>The value of onclick will be XML escaped. 
      * Use new HtmlAttributes().add("onclick",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param onclick the String | null.
+     * @param onClick the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
@@ -1900,8 +1925,8 @@ public abstract class HtmlAttributesFactory {
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onContextmenu(String script) {
-        return new HtmlAttributes().addScript("oncontextmenu", script, ESCAPE_CHARS);
+    public static HtmlAttributes onContextmenu(String oncontextmenu) {
+        return new HtmlAttributes().addScript("oncontextmenu", oncontextmenu, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onformchange</em> attribute and the given String parameter as its value.
@@ -1915,8 +1940,8 @@ public abstract class HtmlAttributesFactory {
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onFormchange(String script) {
-        return new HtmlAttributes().addScript("onformchange", script, ESCAPE_CHARS);
+    public static HtmlAttributes onFormchange(String onformchange) {
+        return new HtmlAttributes().addScript("onformchange", onformchange, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onforminput</em> attribute and the given String parameter as its value.
@@ -1930,8 +1955,8 @@ public abstract class HtmlAttributesFactory {
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onForminput(String script) {
-        return new HtmlAttributes().addScript("onforminput", script, ESCAPE_CHARS);
+    public static HtmlAttributes onForminput(String onforminput) {
+        return new HtmlAttributes().addScript("onforminput", onforminput, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>oninput</em> attribute and the given String parameter as its value.
@@ -1945,8 +1970,8 @@ public abstract class HtmlAttributesFactory {
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onInput(String script) {
-        return new HtmlAttributes().addScript("oninput", script, ESCAPE_CHARS);
+    public static HtmlAttributes onInput(String oninput) {
+        return new HtmlAttributes().addScript("oninput", oninput, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>oninvalid</em> attribute and the given String parameter as its value.
@@ -1960,8 +1985,8 @@ public abstract class HtmlAttributesFactory {
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onInvalid(String script) {
-        return new HtmlAttributes().addScript("oninvalid", script, ESCAPE_CHARS);
+    public static HtmlAttributes onInvalid(String oninvalid) {
+        return new HtmlAttributes().addScript("oninvalid", oninvalid, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>oncanplay</em> attribute and the given String parameter as its value.
@@ -1976,8 +2001,8 @@ stop for buffering</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onCanplay(String script) {
-        return new HtmlAttributes().addScript("oncanplay", script, ESCAPE_CHARS);
+    public static HtmlAttributes onCanplay(String oncanplay) {
+        return new HtmlAttributes().addScript("oncanplay", oncanplay, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>oncanplaythrough</em> attribute and the given String parameter as its value.
@@ -1992,8 +2017,8 @@ stopping for buffering</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onCanplaythrough(String script) {
-        return new HtmlAttributes().addScript("oncanplaythrough", script, ESCAPE_CHARS);
+    public static HtmlAttributes onCanplaythrough(String oncanplaythrough) {
+        return new HtmlAttributes().addScript("oncanplaythrough", oncanplaythrough, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ondurationchange</em> attribute and the given String parameter as its value.
@@ -2007,8 +2032,8 @@ stopping for buffering</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onDurationchange(String script) {
-        return new HtmlAttributes().addScript("ondurationchange", script, ESCAPE_CHARS);
+    public static HtmlAttributes onDurationchange(String ondurationchange) {
+        return new HtmlAttributes().addScript("ondurationchange", ondurationchange, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onemptied</em> attribute and the given String parameter as its value.
@@ -2023,8 +2048,8 @@ empty (network errors, errors on load etc.)</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onEmptied(String script) {
-        return new HtmlAttributes().addScript("onemptied", script, ESCAPE_CHARS);
+    public static HtmlAttributes onEmptied(String onemptied) {
+        return new HtmlAttributes().addScript("onemptied", onemptied, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onended</em> attribute and the given String parameter as its value.
@@ -2038,8 +2063,8 @@ empty (network errors, errors on load etc.)</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onEnded(String script) {
-        return new HtmlAttributes().addScript("onended", script, ESCAPE_CHARS);
+    public static HtmlAttributes onEnded(String onended) {
+        return new HtmlAttributes().addScript("onended", onended, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onloadeddata</em> attribute and the given String parameter as its value.
@@ -2053,8 +2078,8 @@ empty (network errors, errors on load etc.)</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onLoadeddata(String script) {
-        return new HtmlAttributes().addScript("onloadeddata", script, ESCAPE_CHARS);
+    public static HtmlAttributes onLoadeddata(String onloadeddata) {
+        return new HtmlAttributes().addScript("onloadeddata", onloadeddata, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onloadedmetadata</em> attribute and the given String parameter as its value.
@@ -2069,8 +2094,8 @@ media element is loaded</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onLoadedmetadata(String script) {
-        return new HtmlAttributes().addScript("onloadedmetadata", script, ESCAPE_CHARS);
+    public static HtmlAttributes onLoadedmetadata(String onloadedmetadata) {
+        return new HtmlAttributes().addScript("onloadedmetadata", onloadedmetadata, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onloadstart</em> attribute and the given String parameter as its value.
@@ -2084,8 +2109,8 @@ media element is loaded</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onLoadstart(String script) {
-        return new HtmlAttributes().addScript("onloadstart", script, ESCAPE_CHARS);
+    public static HtmlAttributes onLoadstart(String onloadstart) {
+        return new HtmlAttributes().addScript("onloadstart", onloadstart, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onpause</em> attribute and the given String parameter as its value.
@@ -2099,8 +2124,8 @@ media element is loaded</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onPause(String script) {
-        return new HtmlAttributes().addScript("onpause", script, ESCAPE_CHARS);
+    public static HtmlAttributes onPause(String onpause) {
+        return new HtmlAttributes().addScript("onpause", onpause, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onplay</em> attribute and the given String parameter as its value.
@@ -2114,8 +2139,8 @@ media element is loaded</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onPlay(String script) {
-        return new HtmlAttributes().addScript("onplay", script, ESCAPE_CHARS);
+    public static HtmlAttributes onPlay(String onplay) {
+        return new HtmlAttributes().addScript("onplay", onplay, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onplaying</em> attribute and the given String parameter as its value.
@@ -2129,8 +2154,8 @@ media element is loaded</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onPlaying(String script) {
-        return new HtmlAttributes().addScript("onplaying", script, ESCAPE_CHARS);
+    public static HtmlAttributes onPlaying(String onplaying) {
+        return new HtmlAttributes().addScript("onplaying", onplaying, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onprogress</em> attribute and the given String parameter as its value.
@@ -2144,8 +2169,8 @@ media element is loaded</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onProgress(String script) {
-        return new HtmlAttributes().addScript("onprogress", script, ESCAPE_CHARS);
+    public static HtmlAttributes onProgress(String onprogress) {
+        return new HtmlAttributes().addScript("onprogress", onprogress, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onratechange</em> attribute and the given String parameter as its value.
@@ -2159,8 +2184,8 @@ media element is loaded</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onRatechange(String script) {
-        return new HtmlAttributes().addScript("onratechange", script, ESCAPE_CHARS);
+    public static HtmlAttributes onRatechange(String onratechange) {
+        return new HtmlAttributes().addScript("onratechange", onratechange, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onreadystatechange</em> attribute and the given String parameter as its value.
@@ -2174,8 +2199,8 @@ media element is loaded</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onReadystatechange(String script) {
-        return new HtmlAttributes().addScript("onreadystatechange", script, ESCAPE_CHARS);
+    public static HtmlAttributes onReadystatechange(String onreadystatechange) {
+        return new HtmlAttributes().addScript("onreadystatechange", onreadystatechange, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onseeked</em> attribute and the given String parameter as its value.
@@ -2190,8 +2215,8 @@ longer true, and the seeking has ended</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onSeeked(String script) {
-        return new HtmlAttributes().addScript("onseeked", script, ESCAPE_CHARS);
+    public static HtmlAttributes onSeeked(String onseeked) {
+        return new HtmlAttributes().addScript("onseeked", onseeked, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onseeking</em> attribute and the given String parameter as its value.
@@ -2206,8 +2231,8 @@ true, and the seeking has begun</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onSeeking(String script) {
-        return new HtmlAttributes().addScript("onseeking", script, ESCAPE_CHARS);
+    public static HtmlAttributes onSeeking(String onseeking) {
+        return new HtmlAttributes().addScript("onseeking", onseeking, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onstalled</em> attribute and the given String parameter as its value.
@@ -2222,8 +2247,8 @@ true, and the seeking has begun</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onStalled(String script) {
-        return new HtmlAttributes().addScript("onstalled", script, ESCAPE_CHARS);
+    public static HtmlAttributes onStalled(String onstalled) {
+        return new HtmlAttributes().addScript("onstalled", onstalled, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onsuspend</em> attribute and the given String parameter as its value.
@@ -2238,8 +2263,8 @@ but stopped before the entire media file was fetched</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onSuspend(String script) {
-        return new HtmlAttributes().addScript("onsuspend", script, ESCAPE_CHARS);
+    public static HtmlAttributes onSuspend(String onsuspend) {
+        return new HtmlAttributes().addScript("onsuspend", onsuspend, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ontimeupdate</em> attribute and the given String parameter as its value.
@@ -2253,8 +2278,8 @@ but stopped before the entire media file was fetched</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onTimeupdate(String script) {
-        return new HtmlAttributes().addScript("ontimeupdate", script, ESCAPE_CHARS);
+    public static HtmlAttributes onTimeupdate(String ontimeupdate) {
+        return new HtmlAttributes().addScript("ontimeupdate", ontimeupdate, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onvolumechange</em> attribute and the given String parameter as its value.
@@ -2269,8 +2294,8 @@ volume is set to "mute"</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onVolumechange(String script) {
-        return new HtmlAttributes().addScript("onvolumechange", script, ESCAPE_CHARS);
+    public static HtmlAttributes onVolumechange(String onvolumechange) {
+        return new HtmlAttributes().addScript("onvolumechange", onvolumechange, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onwaiting</em> attribute and the given String parameter as its value.
@@ -2285,8 +2310,8 @@ expected to resume</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onWaiting(String script) {
-        return new HtmlAttributes().addScript("onwaiting", script, ESCAPE_CHARS);
+    public static HtmlAttributes onWaiting(String onwaiting) {
+        return new HtmlAttributes().addScript("onwaiting", onwaiting, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ondrag</em> attribute and the given String parameter as its value.
@@ -2300,8 +2325,8 @@ expected to resume</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onDrag(String script) {
-        return new HtmlAttributes().addScript("ondrag", script, ESCAPE_CHARS);
+    public static HtmlAttributes onDrag(String ondrag) {
+        return new HtmlAttributes().addScript("ondrag", ondrag, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ondragend</em> attribute and the given String parameter as its value.
@@ -2315,8 +2340,8 @@ expected to resume</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onDragend(String script) {
-        return new HtmlAttributes().addScript("ondragend", script, ESCAPE_CHARS);
+    public static HtmlAttributes onDragend(String ondragend) {
+        return new HtmlAttributes().addScript("ondragend", ondragend, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ondragenter</em> attribute and the given String parameter as its value.
@@ -2331,8 +2356,8 @@ drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onDragenter(String script) {
-        return new HtmlAttributes().addScript("ondragenter", script, ESCAPE_CHARS);
+    public static HtmlAttributes onDragenter(String ondragenter) {
+        return new HtmlAttributes().addScript("ondragenter", ondragenter, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ondragleave</em> attribute and the given String parameter as its value.
@@ -2346,8 +2371,8 @@ drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onDragleave(String script) {
-        return new HtmlAttributes().addScript("ondragleave", script, ESCAPE_CHARS);
+    public static HtmlAttributes onDragleave(String ondragleave) {
+        return new HtmlAttributes().addScript("ondragleave", ondragleave, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ondragover</em> attribute and the given String parameter as its value.
@@ -2362,8 +2387,8 @@ valid drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onDragover(String script) {
-        return new HtmlAttributes().addScript("ondragover", script, ESCAPE_CHARS);
+    public static HtmlAttributes onDragover(String ondragover) {
+        return new HtmlAttributes().addScript("ondragover", ondragover, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ondragstart</em> attribute and the given String parameter as its value.
@@ -2377,8 +2402,8 @@ valid drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onDragstart(String script) {
-        return new HtmlAttributes().addScript("ondragstart", script, ESCAPE_CHARS);
+    public static HtmlAttributes onDragstart(String ondragstart) {
+        return new HtmlAttributes().addScript("ondragstart", ondragstart, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ondrop</em> attribute and the given String parameter as its value.
@@ -2392,8 +2417,8 @@ valid drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onDrop(String script) {
-        return new HtmlAttributes().addScript("ondrop", script, ESCAPE_CHARS);
+    public static HtmlAttributes onDrop(String ondrop) {
+        return new HtmlAttributes().addScript("ondrop", ondrop, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onmousewheel</em> attribute and the given String parameter as its value.
@@ -2407,8 +2432,8 @@ valid drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onMousewheel(String script) {
-        return new HtmlAttributes().addScript("onmousewheel", script, ESCAPE_CHARS);
+    public static HtmlAttributes onMousewheel(String onmousewheel) {
+        return new HtmlAttributes().addScript("onmousewheel", onmousewheel, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onscroll</em> attribute and the given String parameter as its value.
@@ -2422,8 +2447,8 @@ valid drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onScroll(String script) {
-        return new HtmlAttributes().addScript("onscroll", script, ESCAPE_CHARS);
+    public static HtmlAttributes onScroll(String onscroll) {
+        return new HtmlAttributes().addScript("onscroll", onscroll, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>contenteditable</em> attribute and the given String parameter as its value.
@@ -2437,8 +2462,8 @@ valid drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes contenteditable(String truefalse) {
-        return new HtmlAttributes().add("contenteditable", truefalse, ESCAPE_CHARS);
+    public static HtmlAttributes contenteditable(String contenteditable) {
+        return new HtmlAttributes().add("contenteditable", contenteditable, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>contextmenu</em> attribute and the given String parameter as its value.
@@ -2452,8 +2477,8 @@ valid drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes contextmenu(String menu_id) {
-        return new HtmlAttributes().add("contextmenu", menu_id, ESCAPE_CHARS);
+    public static HtmlAttributes contextmenu(String contextmenu) {
+        return new HtmlAttributes().add("contextmenu", contextmenu, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>draggable</em> attribute and the given String parameter as its value.
@@ -2467,8 +2492,8 @@ valid drop target</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes draggable(String truefalseauto) {
-        return new HtmlAttributes().add("draggable", truefalseauto, ESCAPE_CHARS);
+    public static HtmlAttributes draggable(String draggable) {
+        return new HtmlAttributes().add("draggable", draggable, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>dropzone</em> attribute and the given String parameter as its value.
@@ -2479,7 +2504,7 @@ the element</p>
      * <p>The value of dropzone will be XML escaped. 
      * Use new HtmlAttributes().add("dropzone",<i>value</i>,false) if the value does not have characters that need escaping.</p>
      *      
-     * @param dropzone the String | null.
+     * @param copymovelink the String | null.
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
@@ -2515,8 +2540,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes spellcheck(String truefalse) {
-        return new HtmlAttributes().add("spellcheck", truefalse, ESCAPE_CHARS);
+    public static HtmlAttributes spellcheck(String spellcheck) {
+        return new HtmlAttributes().add("spellcheck", spellcheck, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onafterprint</em> attribute and the given String parameter as its value.
@@ -2530,8 +2555,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onAfterprint(String script) {
-        return new HtmlAttributes().addScript("onafterprint", script, ESCAPE_CHARS);
+    public static HtmlAttributes onAfterprint(String onafterprint) {
+        return new HtmlAttributes().addScript("onafterprint", onafterprint, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onbeforeprint</em> attribute and the given String parameter as its value.
@@ -2545,8 +2570,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onBeforeprint(String script) {
-        return new HtmlAttributes().addScript("onbeforeprint", script, ESCAPE_CHARS);
+    public static HtmlAttributes onBeforeprint(String onbeforeprint) {
+        return new HtmlAttributes().addScript("onbeforeprint", onbeforeprint, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onbeforeonload</em> attribute and the given String parameter as its value.
@@ -2560,8 +2585,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onBeforeonload(String script) {
-        return new HtmlAttributes().addScript("onbeforeonload", script, ESCAPE_CHARS);
+    public static HtmlAttributes onBeforeonload(String onbeforeonload) {
+        return new HtmlAttributes().addScript("onbeforeonload", onbeforeonload, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onerror</em> attribute and the given String parameter as its value.
@@ -2575,8 +2600,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onError(String script) {
-        return new HtmlAttributes().addScript("onerror", script, ESCAPE_CHARS);
+    public static HtmlAttributes onError(String onerror) {
+        return new HtmlAttributes().addScript("onerror", onerror, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onhaschange</em> attribute and the given String parameter as its value.
@@ -2590,8 +2615,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onHaschange(String script) {
-        return new HtmlAttributes().addScript("onhaschange", script, ESCAPE_CHARS);
+    public static HtmlAttributes onHaschange(String onhaschange) {
+        return new HtmlAttributes().addScript("onhaschange", onhaschange, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onmessage</em> attribute and the given String parameter as its value.
@@ -2605,8 +2630,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onMessage(String script) {
-        return new HtmlAttributes().addScript("onmessage", script, ESCAPE_CHARS);
+    public static HtmlAttributes onMessage(String onmessage) {
+        return new HtmlAttributes().addScript("onmessage", onmessage, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onoffline</em> attribute and the given String parameter as its value.
@@ -2620,8 +2645,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onOffline(String script) {
-        return new HtmlAttributes().addScript("onoffline", script, ESCAPE_CHARS);
+    public static HtmlAttributes onOffline(String onoffline) {
+        return new HtmlAttributes().addScript("onoffline", onoffline, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>ononline</em> attribute and the given String parameter as its value.
@@ -2635,8 +2660,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onOnline(String script) {
-        return new HtmlAttributes().addScript("ononline", script, ESCAPE_CHARS);
+    public static HtmlAttributes onOnline(String ononline) {
+        return new HtmlAttributes().addScript("ononline", ononline, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onpagehide</em> attribute and the given String parameter as its value.
@@ -2650,8 +2675,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onPagehide(String script) {
-        return new HtmlAttributes().addScript("onpagehide", script, ESCAPE_CHARS);
+    public static HtmlAttributes onPagehide(String onpagehide) {
+        return new HtmlAttributes().addScript("onpagehide", onpagehide, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onpageshow</em> attribute and the given String parameter as its value.
@@ -2665,8 +2690,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onPageshow(String script) {
-        return new HtmlAttributes().addScript("onpageshow", script, ESCAPE_CHARS);
+    public static HtmlAttributes onPageshow(String onpageshow) {
+        return new HtmlAttributes().addScript("onpageshow", onpageshow, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onpopstate</em> attribute and the given String parameter as its value.
@@ -2680,8 +2705,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onPopstate(String script) {
-        return new HtmlAttributes().addScript("onpopstate", script, ESCAPE_CHARS);
+    public static HtmlAttributes onPopstate(String onpopstate) {
+        return new HtmlAttributes().addScript("onpopstate", onpopstate, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onredo</em> attribute and the given String parameter as its value.
@@ -2695,8 +2720,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onRedo(String script) {
-        return new HtmlAttributes().addScript("onredo", script, ESCAPE_CHARS);
+    public static HtmlAttributes onRedo(String onredo) {
+        return new HtmlAttributes().addScript("onredo", onredo, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onresize</em> attribute and the given String parameter as its value.
@@ -2710,8 +2735,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onResize(String script) {
-        return new HtmlAttributes().addScript("onresize", script, ESCAPE_CHARS);
+    public static HtmlAttributes onResize(String onresize) {
+        return new HtmlAttributes().addScript("onresize", onresize, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onstorage</em> attribute and the given String parameter as its value.
@@ -2725,8 +2750,8 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onStorage(String script) {
-        return new HtmlAttributes().addScript("onstorage", script, ESCAPE_CHARS);
+    public static HtmlAttributes onStorage(String onstorage) {
+        return new HtmlAttributes().addScript("onstorage", onstorage, ESCAPE_CHARS);
     }
     /**
      * Return a new HtmlAttributes with the <em>onundo</em> attribute and the given String parameter as its value.
@@ -2740,66 +2765,126 @@ checked</p>
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML5     
      */
-    public static HtmlAttributes onUndo(String script) {
-        return new HtmlAttributes().addScript("onundo", script, ESCAPE_CHARS);
+    public static HtmlAttributes onUndo(String onundo) {
+        return new HtmlAttributes().addScript("onundo", onundo, ESCAPE_CHARS);
     }
     //
     // Methods below are for convencience when using e.g. JQuery mobile 
     //
+    /**
+     * @param enabled
+     * @return
+     */
     public static HtmlAttributes dataAjax(boolean enabled) {
         return new HtmlAttributes().add("data-ajax", Boolean.toString(enabled),false);
     }    
     
+    /**
+     * @param role
+     * @return
+     */
     public static HtmlAttributes dataRole(String role) {
         return new HtmlAttributes().add("data-role", role);
     }
 
+    /**
+     * @param icon
+     * @return
+     */
     public static HtmlAttributes dataIcon(String icon) {
         return new HtmlAttributes().add("data-icon", icon);
     }
 
+    /**
+     * @param type
+     * @return
+     */
     public static HtmlAttributes dataType(String type) {
         return new HtmlAttributes().add("data-type", type);
     }
 
+    /**
+     * @param inline
+     * @return
+     */
     public static HtmlAttributes dataInline(boolean inline) {
         return new HtmlAttributes().add("data-inline", String.valueOf(inline));
     }
 
+    /**
+     * @param collapsed
+     * @return
+     */
     public static HtmlAttributes dataCollapsed(boolean collapsed) {
         return new HtmlAttributes().add("data-collapsed", String.valueOf(collapsed));
     }
 
+    /**
+     * @param theme
+     * @return
+     */
     public static HtmlAttributes dataTheme(String theme) {
         return new HtmlAttributes().add("data-theme", theme);
     }
 
+    /**
+     * @param inset
+     * @return
+     */
     public static HtmlAttributes dataInset(boolean inset) {
         return new HtmlAttributes().add("data-inset", Boolean.toString(inset));
     }
 
+    /**
+     * @param direction
+     * @return
+     */
     public static HtmlAttributes dataDirection(String direction) {
         return new HtmlAttributes().add("data-direction", direction, false);
     }
     
+    /**
+     * @param xy
+     * @return
+     */
     public static HtmlAttributes dataScroll(String xy) {
         return new HtmlAttributes().add("data-scroll", xy, false);
     }
 
+    /**
+     * @param rel
+     * @return
+     */
     public static HtmlAttributes dataRel(String rel) {
         return new HtmlAttributes().add("data-rel", rel, false);
     }
 
+    /**
+     * @param inline
+     * @return
+     */
     public static HtmlAttributes dataInline(String inline) {
         return new HtmlAttributes().add("data-inline", inline, false);
     }     
+    /**
+     * @param isMini
+     * @return
+     */
     public static HtmlAttributes dataMini(boolean isMini) {
         return new HtmlAttributes().add("data-mini", Boolean.toString(isMini), false);
     }        
     // fixed, inline
+    /**
+     * @param dataPosition
+     * @return
+     */
     public static HtmlAttributes dataPosition(String dataPosition) {
         return new HtmlAttributes().add("data-position", dataPosition, false);
     }    
+    /**
+     * @param dataContentTheme
+     * @return
+     */
     public static HtmlAttributes dataContentTheme(String dataContentTheme) {
         return new HtmlAttributes().add("data-content-theme", dataContentTheme, false);
     }   

@@ -19,6 +19,10 @@ public class RenderableView implements View {
     Renderable component;
     String contentType;
 
+    /**
+     * @param render
+     * @param contentType
+     */
     public RenderableView(Renderable render, String contentType) {
         this.component = render;
         this.contentType = contentType;
