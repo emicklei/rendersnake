@@ -8,11 +8,26 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.rendersnake.HtmlCanvas;
 
+/**
+ * @author emicklei
+ *
+ */
 public class HtmlServletCanvas extends HtmlCanvas {
 
+    /**
+     * 
+     */
     public HttpServletRequest request;
+    /**
+     * 
+     */
     public HttpServletResponse response;    
     
+    /**
+     * @param request
+     * @param response
+     * @param out
+     */
     public HtmlServletCanvas(HttpServletRequest request, HttpServletResponse response, Writer out) {
         this.request = request;
         this.response = response;
@@ -20,6 +35,9 @@ public class HtmlServletCanvas extends HtmlCanvas {
     }    
     /**
      * Answer whether this html was created for an Ajax Http Request
+     */
+    /**
+     * @return
      */
     public boolean hasAjaxRequest() {
         return request != null && request.getHeader("x-requested-with").equals("XMLHttpRequest");

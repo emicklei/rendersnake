@@ -3,7 +3,6 @@ package org.rendersnake;
 import static org.rendersnake.HtmlAttributesFactory.border;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 

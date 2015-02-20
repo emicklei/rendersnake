@@ -17,6 +17,12 @@ public class HtmlCanvasFactory {
     public static String INSPECT_QUERY_PARAM = "inspect";
     public static boolean DEBUG_ENABLED = true;
 
+    /**
+     * @param request
+     * @param response
+     * @param out
+     * @return
+     */
     public static HtmlCanvas createCanvas(HttpServletRequest request, HttpServletResponse response, Writer out) {
 
         HtmlCanvas html = null;

@@ -410,6 +410,10 @@ public class HtmlCanvas {
         else
             return new SinkCanvas(this);            
     }
+    /**
+     * @return
+     * @throws IOException
+     */
     public HtmlCanvas _if() throws IOException {
         // NOOP
         return this;
@@ -1357,6 +1361,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>map</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1484,6 +1489,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>tt</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1547,6 +1553,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>i</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1610,6 +1617,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>big</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1673,6 +1681,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>small</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1740,6 +1749,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>strike</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1807,6 +1817,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>s</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -1874,6 +1885,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>u</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -2005,6 +2017,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>font</em> tag.
+	 * @return 
      *
      * @throws IOException in case of an I/O error while writing the end tag.
      */
@@ -2122,7 +2135,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>body</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _body() throws IOException {
@@ -2230,7 +2243,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>button</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _button() throws IOException {
@@ -2292,7 +2305,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>caption</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _caption() throws IOException {
@@ -2418,7 +2431,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>colgroup</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _colgroup() throws IOException {
@@ -2483,7 +2496,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>dd</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _dd() throws IOException {
@@ -2548,7 +2561,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>dl</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _dl() throws IOException {
@@ -2613,7 +2626,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>dt</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _dt() throws IOException {
@@ -2676,7 +2689,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>del</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _del() throws IOException {
@@ -2739,7 +2752,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>ins</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _ins() throws IOException {
@@ -2804,7 +2817,7 @@ public class HtmlCanvas {
 
 	/**
      * Closes the <em>dir</em> tag.
-     *
+	 * @return 
      * @throws IOException in case of an I/O error while writing the end tag.
      */
     public HtmlCanvas _dir() throws IOException {

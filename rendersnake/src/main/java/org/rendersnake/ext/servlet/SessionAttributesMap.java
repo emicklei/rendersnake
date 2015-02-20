@@ -9,11 +9,18 @@ import javax.servlet.http.HttpSession;
 
 import org.rendersnake.internal.ContextMap;
 
+/**
+ * @author emicklei
+ *
+ */
 public class SessionAttributesMap implements ContextMap {
 
     private HttpServletRequest request;
     private HttpSession session;
 
+    /**
+     * @param request
+     */
     public SessionAttributesMap(HttpServletRequest request) {
         super();
         this.request = request;

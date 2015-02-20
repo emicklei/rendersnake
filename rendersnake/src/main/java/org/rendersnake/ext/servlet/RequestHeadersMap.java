@@ -8,10 +8,17 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.rendersnake.internal.ContextMap;
 
+/**
+ * @author emicklei
+ *
+ */
 public class RequestHeadersMap implements ContextMap {
 
     private HttpServletRequest request;
     
+    /**
+     * @param request
+     */
     public RequestHeadersMap(HttpServletRequest request) {
         this.request = request;
     }    

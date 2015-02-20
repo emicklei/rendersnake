@@ -1,7 +1,5 @@
 package org.rendersnake.ext.jquery;
 
-import java.io.IOException;
-
 import org.rendersnake.HtmlAttributes;
 /**
  * Use org.rendersnake.HtmlAttributesFactory instead.
@@ -11,10 +9,17 @@ import org.rendersnake.HtmlAttributes;
 @Deprecated
 public class JQueryAttributes extends HtmlAttributes {
 
+    /**
+     * 
+     */
     public JQueryAttributes() {
         super();
     }
 
+    /**
+     * @param key
+     * @param value
+     */
     public JQueryAttributes(String key, String value) {
         super(key, value);
     }

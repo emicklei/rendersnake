@@ -11,6 +11,10 @@ import org.rendersnake.HtmlCanvas;
  * @author ernestmicklei
  */
 public class ServletUtils {
+    /**
+     * @param canvas
+     * @return
+     */
     public static HttpServletRequest requestFor(HtmlCanvas canvas){
         if (canvas instanceof HtmlServletCanvas) {
             return ((HtmlServletCanvas)canvas).request;
@@ -18,6 +22,10 @@ public class ServletUtils {
             return null;
         }
     }
+    /**
+     * @param canvas
+     * @return
+     */
     public static HttpServletResponse responseFor(HtmlCanvas canvas){
         if (canvas instanceof HtmlServletCanvas) {
             return ((HtmlServletCanvas)canvas).response;
@@ -25,6 +33,10 @@ public class ServletUtils {
             return null;
         }        
     }
+    /**
+     * @param canvas
+     * @return
+     */
     public static HttpSession sessionFor(HtmlCanvas canvas){
         if (canvas instanceof HtmlServletCanvas) {
             HttpServletRequest request = ((HtmlServletCanvas)canvas).request;
@@ -35,6 +47,10 @@ public class ServletUtils {
             return null;
         }        
     }
+    /**
+     * @param canvas
+     * @return
+     */
     public static boolean hasAjaxRequest(HtmlCanvas canvas){
         if (canvas instanceof HtmlServletCanvas) {
             return ((HtmlServletCanvas)canvas).hasAjaxRequest();

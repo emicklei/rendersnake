@@ -19,6 +19,9 @@ public class JQueryLibrary implements Renderable {
     
     private String url;
 
+    /**
+     * @param url
+     */
     public JQueryLibrary(String url) {
         super();
         this.url = url;
@@ -40,6 +43,10 @@ public class JQueryLibrary implements Renderable {
         return new JQueryLibrary(BASE_RESOURCE_URL + "/ui/" + version + "/jquery-ui.min.js");
     }
 
+    /**
+     * @param version
+     * @return
+     */
     public static JQueryLibrary baseTheme(String version) {
         return theme(version,"base");
     }
@@ -48,6 +55,11 @@ public class JQueryLibrary implements Renderable {
      * @param version
      * @return a JQueryLibrary
      */    
+    /**
+     * @param version
+     * @param theme
+     * @return
+     */
     public static JQueryLibrary theme(String version, String theme) {
         return new JQueryLibrary(BASE_RESOURCE_URL + "/ui/" + version + "/themes/"+theme+"/jquery-ui.css");
     }    

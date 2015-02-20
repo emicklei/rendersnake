@@ -24,6 +24,11 @@ public class DebugHtmlCanvas extends HtmlServletCanvas {
 	public boolean enabled = true;
 	public int renderCount = 0;
 
+	/**
+	 * @param request
+	 * @param response
+	 * @param out
+	 */
 	public DebugHtmlCanvas(HttpServletRequest request,
 			HttpServletResponse response, Writer out) {
 		super(request, response, out);
