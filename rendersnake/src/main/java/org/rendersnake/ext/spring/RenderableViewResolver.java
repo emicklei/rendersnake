@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.view.RedirectView;
 /**
  * RenderableViewResolver is a view resolver that does a lookup for
  * a Renderable component in the application context.
@@ -36,6 +37,12 @@ public class RenderableViewResolver implements ViewResolver, ApplicationContextA
      * @return a RenderableView | null
      */
     public View resolveViewName(String viewName, Locale locale) throws Exception {
+    	
+    	// Key-word use in Spring controller for redirect url
+    	if (viewName.startsWith("redirect:")) {
+    		final String url = viewName.replace("redirect:", "");
+    		return new RedirectView(url);
+    	}
 
         final Renderable component = appCtx.getBean(viewName, Renderable.class);
         if (component == null) return null; 
