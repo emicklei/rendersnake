@@ -1273,8 +1273,8 @@ public abstract class HtmlAttributesFactory {
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01     
      */
-    public static HtmlAttributes placeholder(String label) {
-        return new HtmlAttributes().add("placeholder", label, ESCAPE_CHARS);
+    public static HtmlAttributes placeholder(String placeholder) {
+        return new HtmlAttributes().add("placeholder", placeholder, ESCAPE_CHARS);
     }
     
     /**

@@ -1427,8 +1427,8 @@ public class HtmlAttributes implements CharactersWriteable {
      * @return the receiver, this <code>HtmlAttributes</code> instance.
      * @since HTML4.01      
      */
-    public HtmlAttributes placeholder(String label) {
-        return this.add("placeholder", label, ESCAPE_CHARS);
+    public HtmlAttributes placeholder(String placeholder) {
+        return this.add("placeholder", placeholder, ESCAPE_CHARS);
     }
     
     /**
