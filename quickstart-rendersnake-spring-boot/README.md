@@ -8,7 +8,7 @@ Simple example Login story with:
 
 New Feature:
 - Manage redirect key-word in controller
-- Template framework
+- @Template annotation
 
 # Redirect key-word
 To make a redirect url in the spring controller you can use the 'redirect:/someURL' in the return method.
@@ -31,7 +31,7 @@ public class LoginController {
 	}
 }
 ```
-# Template framework
+# @Template annotation
 For a clearer code you can use the @Template annotation. It's allow you to apply a template to your page. 
 
 1. Create your template (implements TemplateDescriptor)
