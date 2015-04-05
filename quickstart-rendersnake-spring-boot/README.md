@@ -41,7 +41,7 @@ public class LoginController {
 # @Template annotation
 For a clearer code you can use the @Template annotation. It's allow you to apply a template to your page. 
 
-1. Create your template (implements TemplateDescriptor)
+1. Create your template by implementing TemplateDescriptor
 ```java
 public class DefaultTemplate implements TemplateDescriptor {
 	
