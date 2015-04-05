@@ -1,11 +1,41 @@
 quickstart-rendersnake-spring-boot
 ===========
+Simple example Login story with:
+- Rendersnake (Spring part)
+- Spring Boot
+- Twitter Bootstrap
+- Font-awesome
 
-Quickstart using:
+New Feature:
+- Manage redirect key-word in controller
+- Template framework
 
-- 
+# Redirect keyword
+To make a redirect url (like Spring) in the spring controller you can use the 'redirect:/' key word:
 
-Visit [rendersnake.org](http://rendersnake.org) to read the full documentation from a renderSnake powered application.
+LoginController
+```java
+@Controller
+@RequestMapping(value = "/login" )
+public class LoginController {
+	
+	@RequestMapping(method = RequestMethod.POST)
+	public String checkLoginAndDisplayPage(
+			@Valid LoginBinder loginBinder,
+			BindingResult result) 
+	{
+		if (result.hasErrors()) {
+			return "redirect:/login?fieldError";
+		}
+		return "redirect:/welcome";
+	}
+	
+	@RequestMapping(method = RequestMethod.GET)
+	public String displayLoginPage() {
+		return "loginPage";
+	}
+}
+```
 
 Hello example
 ```java
