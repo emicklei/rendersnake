@@ -10,7 +10,7 @@ New Feature:
 - Manage redirect key-word in controller
 - Template framework
 
-# Redirect keyword
+# Redirect key-word
 To make a redirect url in the spring controller you can use the 'redirect:/someURL' in the return method.
 ```java
 @Controller
@@ -55,7 +55,7 @@ public class DefaultTemplate implements TemplateDescriptor {
 		    .macros().stylesheet("/bower_components/bootstrap/dist/css/bootstrap.min.css")
 		    .macros().stylesheet("/bower_components/fontawesome/css/font-awesome.min.css")
 		    .macros().javascript("/bower_components/jquery/dist/jquery.min.js")
-	     	    .macros().javascript("/bower_components/bootstrap/dist/js/bootstrap.min.js");
+		    .macros().javascript("/bower_components/bootstrap/dist/js/bootstrap.min.js");
 	}
 	
 	// Html write just after <body>
