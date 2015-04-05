@@ -1,4 +1,4 @@
-quickstart-rendersnake-spring-boot
+Quickstart-rendersnake-spring-boot
 ===========
 Simple example Login story with:
 - Rendersnake (Spring part)
@@ -9,6 +9,13 @@ Simple example Login story with:
 New Feature:
 - Manage redirect key-word in controller
 - @Template annotation
+
+# How to
+- Download all the project: https://github.com/moifort/rendersnake/archive/feature.zip
+- Import with Maven all the project
+- In the same workspace import with Maven the quickstart-rendersnake-spring-boot
+- In the quickstart-rendersnake-spring-boot right click on ApplicationStarter.java and run it!
+- Open your browser and enter the url: http://localhost:8080
 
 # Redirect key-word
 To make a redirect url in the spring controller you can use the 'redirect:/someURL' in the return method.
