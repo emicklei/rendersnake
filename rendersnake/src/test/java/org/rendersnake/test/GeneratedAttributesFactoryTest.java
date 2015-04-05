@@ -2,9 +2,9 @@ package org.rendersnake.test;
 
 import java.io.IOException;
 
-import org.rendersnake.HtmlAttributesFactory;
-
 import junit.framework.TestCase;
+
+import org.rendersnake.HtmlAttributesFactory;
 
 public class GeneratedAttributesFactoryTest extends TestCase {
     public void test_summary() throws IOException {
@@ -309,6 +309,10 @@ public class GeneratedAttributesFactoryTest extends TestCase {
 
     public void test_label() throws IOException {
         assertEquals(" label=\"label\"", HtmlAttributesFactory.label("label").toHtml());
+    }
+    
+    public void test_placeholder() throws IOException {
+        assertEquals(" placeholder=\"placeholder\"", HtmlAttributesFactory.placeholder("placeholder").toHtml());
     }
 
     public void test_onFocus() throws IOException {

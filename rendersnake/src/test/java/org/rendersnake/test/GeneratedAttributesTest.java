@@ -311,6 +311,10 @@ public class GeneratedAttributesTest extends TestCase {
     public void test_label() throws IOException {
         assertEquals(" label=\"label\"", new HtmlAttributes().label("label").toHtml());
     }
+    
+    public void test_placeholder() throws IOException {
+        assertEquals(" placeholder=\"placeholder\"", new HtmlAttributes().placeholder("placeholder").toHtml());
+    }
 
     public void test_onFocus() throws IOException {
         assertEquals(" onfocus=\"onfocus\"", new HtmlAttributes().onFocus("onfocus").toHtml());
