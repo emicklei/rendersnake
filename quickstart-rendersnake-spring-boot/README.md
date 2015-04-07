@@ -1,4 +1,4 @@
-quickstart-rendersnake-spring-boot
+Quickstart-rendersnake-spring-boot
 ===========
 Simple example Login story with:
 - Rendersnake (Spring part)
@@ -8,24 +8,26 @@ Simple example Login story with:
 
 New Feature:
 - Manage redirect key-word in controller
-- Template framework
+- @Template annotation
 
-# Redirect keyword
-To make a redirect url (like Spring) in the spring controller you can use the 'redirect:/' key word:
+# How to
+- Download all the project: https://github.com/moifort/rendersnake/archive/feature.zip
+- Import with Maven all the project
+- In the same workspace import with Maven the quickstart-rendersnake-spring-boot
+- In the quickstart-rendersnake-spring-boot right click on ApplicationStarter.java and run it!
+- Open your browser and enter the url: http://localhost:8080
 
-LoginController
+# Redirect key-word
+To make a redirect url in the spring controller you can use the 'redirect:/someURL' in the return method.
 ```java
 @Controller
 @RequestMapping(value = "/login" )
 public class LoginController {
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String checkLoginAndDisplayPage(
-			@Valid LoginBinder loginBinder,
-			BindingResult result) 
-	{
+	public String checkLoginAndDisplayPage(@Valid LoginBinder loginBinder, BindingResult result) {
 		if (result.hasErrors()) {
-			return "redirect:/login?fieldError";
+			return "redirect:/login?error";
 		}
 		return "redirect:/welcome";
 	}
@@ -36,106 +38,89 @@ public class LoginController {
 	}
 }
 ```
+# @Template annotation
+For a clearer code you can use the @Template annotation. It's allow you to apply a template to your page. 
 
-Hello example
+1. Create your template by implementing TemplateDescriptor
 ```java
-HtmlCanvas html = new HtmlCanvas();
-html
-  .html()
-    .body()
-       .h1().content("Hello Coder")
-    ._body()
-  ._html();
-System.out.println(html.toHtml());
+public class DefaultTemplate implements TemplateDescriptor {
+	
+	// Define the default title of your page use in <title></title>
+	@Override
+	public String getDefaultTitle() {
+		return "RenderSnake"; 
+	}
+	
+	// Html write in <head></head>
+	@Override
+	public void renderHeaderOn(HtmlCanvas html) throws IOException {
+		html.meta(charset("utf-8"))
+		    .meta(http_equiv("X-UA-Compatible").content("IE=edge"))
+		    .meta(name("viewport").content("width=device-width, initial-scale=1"))
+		     
+		    // Import Bootstrap + Font-awesome libraries and css 
+		    .macros().stylesheet("/bower_components/bootstrap/dist/css/bootstrap.min.css")
+		    .macros().stylesheet("/bower_components/fontawesome/css/font-awesome.min.css")
+		    .macros().javascript("/bower_components/jquery/dist/jquery.min.js")
+		    .macros().javascript("/bower_components/bootstrap/dist/js/bootstrap.min.js");
+	}
+	
+	// Html write just after <body>
+	@Override
+	public void renderBodyStartOn(HtmlCanvas html) throws IOException {
+		html.div(class_("container")); 
+	}
+	
+	// Html write just before </body>
+	@Override
+	public void renderBodyEndOn(HtmlCanvas html) throws IOException {
+		html._div(); // end container
+	}
 ```
 
-
-Example of a complex Form element to pick one of four options
+2. Apply your template using @Template annotation on your page
 ```java
-html.div(dataRole("fieldcontain"))
-    .fieldset(dataRole("controlgroup").dataType("horizontal"))
-        .legend().content("Method")
-        .input(type("radio").name("method").id("radio-get").value("method-get").checked("checked").onChange("clickedMethod(this.value);"))
-        .label(for_("radio-get")).content("GET")
-        
-        .input(type("radio").name("method").id("radio-post").value("method-post").onChange("clickedMethod(this.value);"))
-        .label(for_("radio-post")).content("POST")
-        
-        .input(type("radio").name("method").id("radio-put").value("method-put").onChange("clickedMethod(this.value);"))
-        .label(for_("radio-put")).content("PUT")
-        
-        .input(type("radio").name("method").id("radio-delete").value("method-delete").onChange("clickedMethod(this.value);"))
-        .label(for_("radio-delete")).content("DELETE")
-    ._fieldset()
-    ._div();
-```
+@Component
+@Template(DefaultTemplate.class)
+public class WelcomePage implements Renderable {
 
-
-Example of a HTML5 page wrapper and JQuery Mobile
-```java
-public class MobileSiteLayoutWrapper extends RenderableWrapper {
-
-    public MobileSiteLayoutWrapper(Renderable component) {
-        super(component);
-    }
-
-    @Override
-    public void renderOn(HtmlCanvas html) throws IOException {
-        html
-        .render(DocType.HTML5)
-        .html()
-            .head()
-                .title().content("renderSnake - Mobile")
-                .render(JQueryLibrary.mobileTheme("1.0"))
-                .render(JQueryLibrary.core("1.6.4"))
-                .render(JQueryLibrary.mobile("1.0"))
-            ._head()
-        .body()
-            .div(dataRole("page"))
-                .div(dataRole("header").dataTheme("b"))
-                    .render(new PageHeader())
-                    ._div()
-                .div(dataRole("content").dataTheme("b"))
-                    .render(this.component)
-                    ._div()
-                .div(dataRole("footer").dataTheme("b"))
-                    .render(new PageFooter())
-                    ._div()
-            ._div()
-        ._body()
-        ._html();
-    }
+	@Override
+	public void renderOn(HtmlCanvas html) throws IOException {
+		html.h1().content("Quickstart Rendersnake");
+		// html stuff...
+	}
 }
 ```
 
-Example of a login component
+3. You can use inheritance with your template, you keep or override the behavior of the default template
 ```java
-public class LoginPageContent implements Renderable {
-
-    @Override
-    public void renderOn(HtmlCanvas html) throws IOException {// @formatter:off
-
-        html.form(action("/login").method("post").id("login-form"))
-            .fieldset()
-                .div(dataRole("fieldcontain"))
-                    .label(for_("name")).content("Username")                    
-                    .input(type("text").name("name").id("name"))                    
-                ._div()
-                .div(dataRole("fieldcontain"))
-                    .label(for_("password")).content("Password")
-                    .input(type("password").name("password").id("password"))                    
-                ._div()
-                .input(type("submit").value("Login"))
-            ._fieldset()
-            ._form();                                               
-    }        
+public class LoginTemplate extends DefaultTemplate {
+	
+	@Override
+	public String getDefaultTitle() {
+		return "Login";
+	}
+	
+	@Override
+	public void renderHeaderOn(HtmlCanvas html) throws IOException {
+		super.renderHeaderOn(html);
+		html.macros().stylesheet("/css/signin.css");
+	}
 }
 ```
-Maven Installation
-````
-<dependency>
-    <groupId>org.rendersnake</groupId>
-    <artifactId>rendersnake</artifactId>
-    <version>1.9</version>
-</dependency>
+4. Apply your inherited template to your page
+```java
+@Component
+@Template(LoginTemplate.class)
+public class LoginPage implements Renderable {
+
+	@Override
+	public void renderOn(HtmlCanvas html) throws IOException {
+		// html stuff...
+	}
+}
 ```
+
+# Screenshots
+![Login Page](images/LoginPage.png)
+![Welcome Page](images/WelcomePage.png)
