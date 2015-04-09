@@ -1260,6 +1260,23 @@ public abstract class HtmlAttributesFactory {
     public static HtmlAttributes label(String label) {
         return new HtmlAttributes().add("label", label, ESCAPE_CHARS);
     }
+    
+    /**
+     * Return a new HtmlAttributes with the <em>placeholder</em> attribute and the given String parameter as its value.
+     *
+     * <p>display default message in the field</p>
+     *
+     * <p>The value of label will be XML escaped. 
+     * Use new HtmlAttributes().add("placeholder",<i>value</i>,false) if the value does not have characters that need escaping.</p>
+     *      
+     * @param placeholder the String | null.
+     * @return the receiver, this <code>HtmlAttributes</code> instance.
+     * @since HTML4.01     
+     */
+    public static HtmlAttributes placeholder(String placeholder) {
+        return new HtmlAttributes().add("placeholder", placeholder, ESCAPE_CHARS);
+    }
+    
     /**
      * Return a new HtmlAttributes with the <em>onfocus</em> attribute and the given String parameter as its value.
      *

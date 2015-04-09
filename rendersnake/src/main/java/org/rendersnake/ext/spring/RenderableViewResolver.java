@@ -3,6 +3,7 @@ package org.rendersnake.ext.spring;
 import java.util.Locale;
 
 import org.rendersnake.Renderable;
+import org.rendersnake.ext.spring.template.TemplateAnnotationResolver;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -45,8 +46,12 @@ public class RenderableViewResolver implements ViewResolver, ApplicationContextA
     	}
 
         final Renderable component = appCtx.getBean(viewName, Renderable.class);
-        if (component == null) return null; 
-        return new RenderableView(component, this.contentType);
+        if (component == null) return null;
+        
+        // Apply template on component define by @Template annotation
+        final Renderable decorateComponent = TemplateAnnotationResolver.compute(component);
+        
+        return new RenderableView(decorateComponent, this.contentType);
     }
 
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

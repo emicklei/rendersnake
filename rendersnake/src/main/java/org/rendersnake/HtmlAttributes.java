@@ -1,7 +1,6 @@
 package org.rendersnake;
 
-import static org.rendersnake.HtmlAttributesFactory.ESCAPE_CHARS;
-import static org.rendersnake.HtmlAttributesFactory.NO_ESCAPE;
+import static org.rendersnake.HtmlAttributesFactory.*;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -1416,6 +1415,22 @@ public class HtmlAttributes implements CharactersWriteable {
     public HtmlAttributes label(String label) {
         return this.add("label", label, ESCAPE_CHARS);
     }
+    
+    /**
+     * Append the <em>placeholder</em> attribute with the given String parameter as its value.
+     *
+     * <p>for use in hierarchical menus</p>
+     *
+     * <p>The value of label will be XML escaped. Use add("placeholder",<i>value</i>,false) if the value does not have characters that need escaping.</p>
+     *     
+     * @param label the String | null.
+     * @return the receiver, this <code>HtmlAttributes</code> instance.
+     * @since HTML4.01      
+     */
+    public HtmlAttributes placeholder(String placeholder) {
+        return this.add("placeholder", placeholder, ESCAPE_CHARS);
+    }
+    
     /**
      * Append the <em>onfocus</em> attribute with the given String parameter as its value.
      *
