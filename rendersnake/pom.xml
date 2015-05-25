@@ -9,6 +9,9 @@
 		<version>1.9</version>		
 	</parent>
 	<artifactId>rendersnake</artifactId>
+	<properties>
+    	<additionalparam>-Xdoclint:none</additionalparam>
+  	</properties>
 	<packaging>bundle</packaging>
 
 	<build>
