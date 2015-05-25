@@ -1,271 +1,295 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
 
-  	<modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  	<groupId>org.rendersnake</groupId>
-  	<artifactId>rendersnake-parent</artifactId>
-  	<version>1.9</version>
-  	<packaging>pom</packaging>
-  	<name>rendersnake - parent</name>
-  	
+    <groupId>org.rendersnake</groupId>
+    <artifactId>rendersnake-parent</artifactId>
+    <version>1.9</version>
+    <packaging>pom</packaging>
+    <name>rendersnake - parent</name>
+
     <modules>
-      <module>rendersnake</module>
-      <module>rendersnake-tryouts</module>
-  </modules>
+        <module>rendersnake</module>
+        <module>rendersnake-tryouts</module>
+    </modules>
 
-  	<description>fast HTML generation libary for Web applications</description>
-  	<url>http://rendersnake.org</url>
-  	<inceptionYear>2010</inceptionYear>
-  	<licenses>
-  		<license>
-  			<name>The Apache Software License, Version 2.0</name>
-  			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-  			<distribution>repo</distribution>
-  		</license>
-  	</licenses>
-  	<scm>
-  		<url>https://github.com/emicklei/rendersnake.git</url>
-      <developerConnection>scm:git:git@github.com:emicklei/rendersnake.git</developerConnection>
-      <connection>scm:git:git@github.com:emicklei/rendersnake.git</connection>
-  	</scm>
+    <description>fast HTML generation libary for Web applications</description>
+    <url>http://rendersnake.org</url>
+    <inceptionYear>2010</inceptionYear>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <scm>
+        <url>https://github.com/emicklei/rendersnake.git</url>
+        <developerConnection>scm:git:git@github.com:emicklei/rendersnake.git</developerConnection>
+        <connection>scm:git:git@github.com:emicklei/rendersnake.git</connection>
+    </scm>
 
-  	<properties>
-  		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<spring.version>4.1.6.RELEASE</spring.version>
-  	</properties>
-
-  	<developers>
-  		<developer>
-  			<id>ernest</id>
-  			<name>Ernest Micklei</name>
-  			<email>ernest.micklei@gmail.com</email>
-  			<url>http://rendersnake.org</url>
-  			<organization>PhilemonWorks</organization>
-  			<organizationUrl>http://www.philemonworks.com</organizationUrl>
-  			<roles>
-  				<role>architect</role>
-  				<role>developer</role>
-  			</roles>
-  			<timezone>-1</timezone>
-  			<properties>
-  			</properties>
-  		</developer>
-  	</developers>
-
-  	<issueManagement>
-  		<system>github</system>
-  		<url>https://github.com/emicklei/rendersnake</url>
-  	</issueManagement>
-
-	<dependencyManagement>
-		<dependencies>
-
-			<dependency>
-				<groupId>junit</groupId>
-				<artifactId>junit</artifactId>
-				<version>4.8.2</version>
-			</dependency>
-
-			<dependency>
-				<groupId>javax.servlet</groupId>
-				<artifactId>servlet-api</artifactId>
-				<version>2.4</version>
-			</dependency>
-
-			<dependency>
-				<groupId>org.apache.commons</groupId>
-				<artifactId>commons-lang3</artifactId>
-				<version>3.1</version>
-			</dependency>
-
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>2.0.1</version>
-			</dependency>
-
-			<!-- for Spring MVC integration -->
-			<dependency>
-				<groupId>org.springframework</groupId>
-				<artifactId>spring-webmvc</artifactId>
-				<version>${spring.version}</version>
-			</dependency>
-
-			<!-- for HTML validation -->
-			<dependency>
-				<groupId>net.sf.jtidy</groupId>
-				<artifactId>jtidy</artifactId>
-				<version>r938</version>
-			</dependency>
-
-			<!-- Guice -->
-			<dependency>
-				<groupId>com.google.inject</groupId>
-				<artifactId>guice</artifactId>
-				<version>3.0</version>
-			</dependency>
-
-			<dependency>
-				<groupId>javax.inject</groupId>
-				<artifactId>javax.inject</artifactId>
-				<version>1</version>		
-			</dependency>
-
-		</dependencies>
-	</dependencyManagement>
-	
-  	<build>
-  		<plugins>
-
-  			<plugin>
-  				<groupId>org.apache.maven.plugins</groupId>
-  				<artifactId>maven-compiler-plugin</artifactId>
-  				<version>2.3.2</version>
-  				<configuration>
-  					<source>1.5</source>
-  					<target>1.5</target>
-  					<!-- compilerArgument>-proc:none</compilerArgument -->
-  				</configuration>
-  			</plugin>
-
-			<plugin>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>2.1.2</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<phase>verify</phase>
-						<goals>
-							<goal>jar-no-fork</goal>
-							<goal>test-jar-no-fork</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <additionalparam>-Xdoclint:none</additionalparam>
-                            <aggregate>true</aggregate>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-  			<plugin>
-  				<groupId>org.apache.maven.plugins</groupId>
-  				<artifactId>maven-site-plugin</artifactId>
-  				<version>3.0-beta-2</version>
-  				<configuration>
-  					<reportPlugins>
-  						<plugin>
-  							<groupId>org.codehaus.mojo</groupId>
-  							<artifactId>cobertura-maven-plugin</artifactId>
-  							<version>2.4</version>
-  						</plugin>
-
-  						<plugin>
-  							<groupId>org.apache.maven.plugins</groupId>
-  							<artifactId>maven-pmd-plugin</artifactId>
-  							<version>2.4</version>
-  							<configuration>
-  								<targetJdk>1.5</targetJdk>
-  							</configuration>
-  						</plugin>
-
-  						<plugin>
-  							<artifactId>maven-jxr-plugin</artifactId>
-  							<version>2.2</version>
-  						</plugin>
-  						<!--plugin>
-  							<artifactId>maven-javadoc-plugin</artifactId>
-  							<version>2.7</version>
-  							<configuration>
-  								<aggregate>true</aggregate>
-  							</configuration>
-  						</plugin-->
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                        <configuration>
-                            <additionalparam>-Xdoclint:none</additionalparam>
-                            <aggregate>true</aggregate>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-
-  					</reportPlugins>
-  				</configuration>
-  			</plugin>
-  		</plugins>
-  	</build>
-
-<!-- https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven#HowToGeneratePGPSignaturesWithMaven-ListKeys -->
-<profiles>
-
-  <profile>
-    <id>doclint-java8-disable</id>
-    <activation>
-      <jdk>[1.8,)</jdk>
-    </activation>
     <properties>
-      <javadoc.opts>-Xdoclint:none</javadoc.opts>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <spring.version>4.1.6.RELEASE</spring.version>
     </properties>
-  </profile>
 
-  <profile>
-    <id>release-sign-artifacts</id>
-    <activation>
-      <property>
-        <name>performRelease</name>
-        <value>true</value>
-      </property>
-    </activation>
+    <developers>
+        <developer>
+            <id>ernest</id>
+            <name>Ernest Micklei</name>
+            <email>ernest.micklei@gmail.com</email>
+            <url>http://rendersnake.org</url>
+            <organization>PhilemonWorks</organization>
+            <organizationUrl>http://www.philemonworks.com</organizationUrl>
+            <roles>
+                <role>architect</role>
+                <role>developer</role>
+            </roles>
+            <timezone>-1</timezone>
+            <properties>
+            </properties>
+        </developer>
+    </developers>
+
+    <issueManagement>
+        <system>github</system>
+        <url>https://github.com/emicklei/rendersnake</url>
+    </issueManagement>
+
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.8.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>servlet-api</artifactId>
+                <version>2.4</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.0.1</version>
+            </dependency>
+
+            <!-- for Spring MVC integration -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+            <!-- for HTML validation -->
+            <dependency>
+                <groupId>net.sf.jtidy</groupId>
+                <artifactId>jtidy</artifactId>
+                <version>r938</version>
+            </dependency>
+
+            <!-- Guice -->
+            <dependency>
+                <groupId>com.google.inject</groupId>
+                <artifactId>guice</artifactId>
+                <version>3.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.inject</groupId>
+                <artifactId>javax.inject</artifactId>
+                <version>1</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
     <build>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-gpg-plugin</artifactId>
-          <version>1.1</version>
-          <executions>
-            <execution>
-              <id>sign-artifacts</id>
-              <phase>verify</phase>
-              <goals>
-                <goal>sign</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </build>
-  </profile>
-</profiles>
+        <plugins>
 
-  </project>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <serverId>ossrh</serverId>
+                    <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+                    <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                    <!-- compilerArgument>-proc:none</compilerArgument -->
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.1.2</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                            <goal>test-jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                            <aggregate>true</aggregate>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.0-beta-2</version>
+                <configuration>
+                    <reportPlugins>
+                        <plugin>
+                            <groupId>org.codehaus.mojo</groupId>
+                            <artifactId>cobertura-maven-plugin</artifactId>
+                            <version>2.4</version>
+                        </plugin>
+
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-pmd-plugin</artifactId>
+                            <version>2.4</version>
+                            <configuration>
+                                <targetJdk>1.5</targetJdk>
+                            </configuration>
+                        </plugin>
+
+                        <plugin>
+                            <artifactId>maven-jxr-plugin</artifactId>
+                            <version>2.2</version>
+                        </plugin>
+                        <!--plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                  <aggregate>true</aggregate>
+                </configuration>
+              </plugin-->
+
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>2.9</version>
+                            <executions>
+                                <execution>
+                                    <id>attach-javadocs</id>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                    <configuration>
+                                        <additionalparam>-Xdoclint:none</additionalparam>
+                                        <aggregate>true</aggregate>
+                                    </configuration>
+                                </execution>
+                            </executions>
+                        </plugin>
+
+                    </reportPlugins>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!-- https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven#HowToGeneratePGPSignaturesWithMaven-ListKeys -->
+    <profiles>
+
+        <profile>
+            <id>doclint-java8-disable</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+            <properties>
+                <javadoc.opts>-Xdoclint:none</javadoc.opts>
+            </properties>
+        </profile>
+
+        <profile>
+            <id>release-sign-artifacts</id>
+            <activation>
+                <property>
+                    <name>performRelease</name>
+                    <value>true</value>
+                </property>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.1</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>
