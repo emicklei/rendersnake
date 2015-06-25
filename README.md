@@ -99,24 +99,16 @@ public class LoginPageContent implements Renderable {
     }        
 }
 ```
-Maven Installation
-````
-    <properties>
-      <rendersnake.version>1.9</rendersnake.version>
-    </properties>
+Maven Installation (available in Maven Central)
 
-		<dependency>
-			<groupId>org.rendersnake</groupId>
-			<artifactId>rendersnake</artifactId>
-			<version>${rendersnake.version}</version>
-		</dependency>
-		
-		<repository>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-            <id>emicklei</id>
-            <name>emicklei</name>
-            <url>http://dl.bintray.com/emicklei/maven</url>
-    </repository>
+````
+<properties>
+	<rendersnake.version>1.9.0</rendersnake.version>
+</properties>
+
+<dependency>
+	<groupId>org.rendersnake</groupId>
+	<artifactId>rendersnake</artifactId>
+	<version>${rendersnake.version}</version>
+</dependency>
 ```
