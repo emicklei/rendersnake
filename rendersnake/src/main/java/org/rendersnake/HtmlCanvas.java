@@ -2327,6 +2327,15 @@ public class HtmlCanvas {
         return this;
     }
 
+	/**
+     * Closes the (deprecated) <em>center</em> tag.
+     *
+     * @throws IOException in case of an I/O error while writing the end tag.
+     */
+    @Deprecated
+    public HtmlCanvas _center() throws IOException {
+    	return this.close("</center>");
+    }
     /**
      * Opens the <em>col</em> tag, with the specified attributes.
      *
