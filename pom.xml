@@ -12,7 +12,8 @@
     <groupId>org.rendersnake</groupId>
     <artifactId>rendersnake</artifactId>
     <version>1.9</version>
-    <packaging>bundle</packaging>
+    <packaging>jar</packaging>
+    <!--packaging>bundle</packaging-->
 
     <description>fast HTML generation libary for Web applications</description>
     <url>http://rendersnake.org</url>
