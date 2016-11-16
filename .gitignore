@@ -10,3 +10,5 @@ pom.xml.versionsBackup
 rendersnake/.classpath
 rendersnake/pom.xml.versionsBackup
 rendersnake-tryouts/pom.xml.versionsBackup
+.idea
+rendersnake.zip
