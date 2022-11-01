@@ -34,17 +34,16 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring.version>4.1.6.RELEASE</spring.version>
+        <spring.version>5.2.20</spring.version>
     </properties>
 
     <developers>
         <developer>
             <id>ernest</id>
             <name>Ernest Micklei</name>
-            <email>ernest.micklei@gmail.com</email>
-            <url>http://rendersnake.org</url>
-            <organization>PhilemonWorks</organization>
-            <organizationUrl>http://www.philemonworks.com</organizationUrl>
+            <email>ernest.micklei+rendersnake@gmail.com</email> 
+            <organization>Cloudfork</organization>
+            <organizationUrl>https://ernestmicklei.com</organizationUrl>
             <roles>
                 <role>architect</role>
                 <role>developer</role>
@@ -78,7 +77,7 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.8.2</version>
+                <version>4.13.1</version>
             </dependency>
 
             <dependency>
@@ -96,7 +95,7 @@
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.0.1</version>
+                <version>2.7</version>
             </dependency>
 
             <!-- for Spring MVC integration -->
