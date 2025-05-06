@@ -1,6 +1,18 @@
 rendersnake
 ===========
 
+**Notice: This project has been archived as of [2025-05-06].**
+
+This repository is no longer actively developed or maintained.
+
+**What this means:**
+*   No new features, updates, or bug fixes will be implemented.
+*   Issues and pull requests will not be reviewed or merged.
+*   Support for this project has ended.
+
+The code remains available for historical and educational purposes. Feel free to browse, fork, and adapt it for your own needs, but understand that it comes with no guarantees or ongoing support.
+
+# about
 RenderSnake is a Java library for creating components and pages that produce HTML using only Java. Its purpose is to support the creation of Web applications that are better maintainable, allows for easier reuse, have testable UI components and produces compact HTML in an efficient way.
 
 Hello example
